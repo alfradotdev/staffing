@@ -1,0 +1,152 @@
+{
+  "App": {
+    "name": "staffing",
+    "version": "1.0.1"
+  },
+  "documents": {
+    "Builder:Page Builder": {
+      "__app__": "loopar"
+    },
+    "Entity:Module": {
+      "__app__": "loopar"
+    },
+    "Entity:App": {
+      "__app__": "loopar"
+    },
+    "App:staffing": {
+      "has_website": 1,
+      "name": "staffing",
+      "description": "Staffing — Fleet & operations staffing (demo)",
+      "version": "1.0.1",
+      "autor": "alfredrz2012@gmail.com",
+      "icon": "Bus",
+      "gap": "",
+      "col_padding": "",
+      "logo": "[{\"name\":\"staffing-logo.svg\",\"size\":11544,\"type\":\"image\",\"src\":\"/assets/public/staffing-logo.svg\"}]",
+      "logo_dark": "[{\"name\":\"staffing-logo-dark.svg\",\"size\":11544,\"type\":\"image\",\"src\":\"/assets/public/staffing-logo-dark.svg\"}]",
+      "logo_mini": "[{\"name\":\"staffing-mark.svg\",\"size\":495,\"type\":\"image\",\"src\":\"/assets/public/staffing-mark.svg\"}]",
+      "logo_mini_dark": "[{\"name\":\"staffing-mark-dark.svg\",\"size\":495,\"type\":\"image\",\"src\":\"/assets/public/staffing-mark-dark.svg\"}]",
+      "favicon": "[{\"name\":\"staffing-favicon.ico\",\"size\":8950,\"type\":\"image\",\"src\":\"/assets/public/staffing-favicon.ico\"}]",
+      "logo_width": 50,
+      "logo_height": "70",
+      "has_footer": 1,
+      "footer": "<div style=\"display: flex; flex-wrap: wrap; justify-content: space-between; padding: 40px 20px; color: inherit; gap: 30px;\">\r\n  <div style=\"flex: 1; min-width: 260px;\">\r\n    ### Staffing\r\n\r\n    Supervised fleet and operations staffing for metro Atlanta: shuttle drivers, lot porters, detailers, cleaning crews and on-site supervisors.\r\n  </div>\r\n\r\n  <div style=\"flex: 1; min-width: 200px;\">\r\n    ### Services\r\n\r\n    * [Shuttle Drivers](/services)\r\n    * [Lot Porters](/services)\r\n    * [Car Wash & Detailing](/services)\r\n    * [Cleaning Crews](/services)\r\n    * [On-Site Supervision](/services)\r\n  </div>\r\n\r\n  <div style=\"flex: 1; min-width: 200px;\">\r\n    ### Contact\r\n\r\n    **Phone:** (404) 555-0142\r\n\r\n    **Email:** [hello@staffing.example](mailto\\:hello@staffing.example)\r\n\r\n    **Area:** Metro Atlanta, GA\r\n\r\n    [Apply for a job →](/careers)\r\n  </div>\r\n</div>",
+      "has_copyright": 1,
+      "copyright": "<div style=\"text-align: center; padding: 20px; border-top: 1px solid rgba(128,128,128,0.3); color: inherit; font-size: 0.9em;\">\r\n  © 2026 **Staffing**. All rights reserved.\r\n\r\n  <span style=\"opacity: 0.6; font-size: 0.85em;\">Powered by </span><a href=\"https://loopar.build\" target=\"_blank\" style=\"color: inherit;\">Loopar</a>\r\n</div>",
+      "fixed": 1,
+      "logo_position": "center",
+      "rounded": "sm",
+      "show_user_section": 0,
+      "solid": 0,
+      "opacity": "",
+      "menu_items": [
+        {
+          "parent_document": "App",
+          "name": "OhbVrpoiVgRV5If",
+          "page": "Staffing Home",
+          "link": "Home",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "LBcbfnoGMbJmTPS",
+          "page": "Staffing Services",
+          "link": "Services",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "IAoCLrZ3aWZkSBv",
+          "page": "Staffing Industries",
+          "link": "Industries",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "rjn9Wvgfygw2wMq",
+          "page": "Staffing Careers",
+          "link": "Careers",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "ZcUDIh7yfJs1ON4",
+          "page": "Staffing About",
+          "link": "About",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "3xKmTecQoXsf2o3",
+          "page": "Staffing Contact",
+          "link": "Contact",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        }
+      ],
+      "menu_actions": [
+        {
+          "parent_document": "App",
+          "name": "gyrDO1xkxwnQrS7",
+          "icon": "Phone",
+          "action": "/contact"
+        }
+      ],
+      "info": ""
+    },
+    "Entity:Module Group": {
+      "__app__": "loopar"
+    },
+    "Module Group:modules": {
+      "name": "modules",
+      "description": "Modules",
+      "in_sidebar": "1"
+    },
+    "Module:staffing": {
+      "name": "staffing",
+      "description": "staffing",
+      "app_name": "staffing",
+      "module_group": "modules",
+      "icon": "Bus",
+      "in_sidebar": "1"
+    },
+    "Entity:Menu Item": {
+      "__app__": "loopar"
+    },
+    "Entity:Menu Action": {
+      "__app__": "loopar"
+    },
+    "Page Builder:Staffing Home": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-home"
+    },
+    "Page Builder:Staffing Services": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-services"
+    },
+    "Page Builder:Staffing Industries": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-industries"
+    },
+    "Page Builder:Staffing Careers": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-careers"
+    },
+    "Page Builder:Staffing About": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-about"
+    },
+    "Page Builder:Staffing Contact": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-contact"
+    }
+  },
+  "postInstaller": {
+    "App:staffing": "link"
+  }
+}
