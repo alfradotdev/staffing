@@ -1,7 +1,7 @@
 {
   "App": {
     "name": "staffing",
-    "version": "1.0.5"
+    "version": "1.0.8"
   },
   "documents": {
     "Builder:Page Builder": {
@@ -16,7 +16,7 @@
     "App:staffing": {
       "name": "staffing",
       "description": "Staffing — Fleet & operations staffing (demo)",
-      "version": "1.0.5",
+      "version": "1.0.8",
       "autor": "alfredrz2012@gmail.com",
       "icon": "Bus",
       "logo": "[{\"name\":\"staffing-logo.svg\",\"size\":11544,\"type\":\"image\",\"src\":\"/assets/public/staffing-logo.svg\"}]",
@@ -43,7 +43,7 @@
       "menu_items": [
         {
           "parent_document": "App",
-          "name": "DeiV3Ao11Tuqjsp",
+          "name": "UyENZOL7VBSC4hG",
           "page": "Staffing Home",
           "link": "Home",
           "parent_menu": null,
@@ -52,7 +52,7 @@
         },
         {
           "parent_document": "App",
-          "name": "m2aTmih91NH0Db2",
+          "name": "apA7v0V1Of2PeiL",
           "page": "Staffing Services",
           "link": "Services",
           "parent_menu": null,
@@ -61,7 +61,7 @@
         },
         {
           "parent_document": "App",
-          "name": "imvnC192EIAJ1w1",
+          "name": "Pm70Oy1aVE75FfL",
           "page": "Staffing Industries",
           "link": "Industries",
           "parent_menu": null,
@@ -70,7 +70,7 @@
         },
         {
           "parent_document": "App",
-          "name": "qU6iAfV1DQxJ1qa",
+          "name": "AUDW5uy7687g2k5",
           "page": "Staffing Careers",
           "link": "Careers",
           "parent_menu": null,
@@ -79,7 +79,7 @@
         },
         {
           "parent_document": "App",
-          "name": "mp6XF37Bxa3Q29A",
+          "name": "HJx3khNF27Rr7W1",
           "page": "Staffing About",
           "link": "About",
           "parent_menu": null,
@@ -88,7 +88,16 @@
         },
         {
           "parent_document": "App",
-          "name": "aisI2OQ6BaD9ST1",
+          "name": "dsCw9g148WrtGl1",
+          "page": "Staffing Portal",
+          "link": "Live Demo",
+          "parent_menu": null,
+          "document_parent_name": null,
+          "router_only": 0
+        },
+        {
+          "parent_document": "App",
+          "name": "ZZ1am1oQn7fpg87",
           "page": "Staffing Contact",
           "link": "Contact",
           "parent_menu": null,
@@ -99,7 +108,7 @@
       "menu_actions": [
         {
           "parent_document": "App",
-          "name": "FAQf83WR6vFK1I2",
+          "name": "LYO0gkE5IGP6sA1",
           "icon": "Phone",
           "action": "/contact"
         }
@@ -142,6 +151,9 @@
     },
     "Page Builder:Staffing Industries": {
       "__root__": "/apps/staffing/modules/staffing/pages/staffing-industries"
+    },
+    "Page Builder:Staffing Portal": {
+      "__root__": "/apps/staffing/modules/staffing/pages/staffing-portal"
     },
     "Page Builder:Staffing Services": {
       "__root__": "/apps/staffing/modules/staffing/pages/staffing-services"

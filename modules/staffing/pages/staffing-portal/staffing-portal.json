@@ -1,0 +1,8 @@
+{
+  "name": "Staffing Portal",
+  "module": "staffing",
+  "enable_history": "0",
+  "enable_comments": "0",
+  "doc_structure": "[{\"node\":\"flportal_001\",\"element\":\"section\",\"data\":{\"label\":\"Portal\",\"class\":\"py-0\"},\"elements\":[{\"node\":\"flportal_002\",\"element\":\"slot\",\"data\":{\"label\":\"Portal\",\"name\":\"portal\"}}]}]",
+  "__ENTITY__": "Page Builder"
+}
