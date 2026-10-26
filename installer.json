@@ -1,10 +1,10 @@
 {
   "App": {
     "name": "staffing",
-    "version": "1.10.1"
+    "version": "1.10.2"
   },
   "documents": {
-    "Builder:Page Builder": {
+    "Builder:Desk Page Builder": {
       "__app__": "loopar"
     },
     "Entity:Module": {
@@ -16,7 +16,7 @@
     "App:staffing": {
       "name": "staffing",
       "description": "Staffing — Fleet & operations staffing (demo)",
-      "version": "1.10.1",
+      "version": "1.10.2",
       "autor": "alfredrz2012@gmail.com",
       "icon": "Bus",
       "logo": "",
@@ -51,26 +51,38 @@
       "icon": "Settings",
       "in_sidebar": 1
     },
-    "Module:staffing-sales": {
-      "name": "staffing-sales",
-      "description": "Sales & Clients",
-      "app_name": "staffing",
-      "icon": "Handshake",
-      "in_sidebar": 1
+    "Desk Page Builder:Staffing Help": {
+      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-help"
     },
-    "Module:staffing-recruiting": {
-      "name": "staffing-recruiting",
-      "description": "Recruiting",
-      "app_name": "staffing",
-      "icon": "UserSearch",
-      "in_sidebar": 1
+    "Entity:Menu Item": {
+      "__app__": "loopar"
     },
-    "Module:staffing-operations": {
-      "name": "staffing-operations",
-      "description": "Operations",
-      "app_name": "staffing",
-      "icon": "CalendarClock",
-      "in_sidebar": 1
+    "Entity:Menu Action": {
+      "__app__": "loopar"
+    },
+    "Desk Page Builder:Staffing Home": {
+      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-home"
+    },
+    "Entity:Staffing Contract Template": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-contract-template"
+    },
+    "Entity:Resources": {
+      "__app__": "loopar"
+    },
+    "Entity:Entity": {
+      "__app__": "loopar"
+    },
+    "Entity:Staffing Position": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-position"
+    },
+    "Entity:Staffing Process": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process"
+    },
+    "Entity:Staffing Process Stage": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process-stage"
+    },
+    "Entity:Staffing Settings": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-settings"
     },
     "Module:staffing-billing": {
       "name": "staffing-billing",
@@ -79,59 +91,33 @@
       "icon": "Receipt",
       "in_sidebar": 1
     },
-    "Entity:Entity": {
-      "__app__": "loopar"
+    "Entity:Staffing Invoice": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice"
     },
-    "Entity:User Directory": {
-      "__app__": "loopar"
+    "Entity:Staffing Invoice Line": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice-line"
     },
-    "Entity:Signature Request": {
-      "__app__": "loopar"
+    "Entity:Staffing Timesheet": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet"
     },
-    "Entity:Staffing Position": {
-      "__root__": "/apps/staffing/modules/staffing/entities/staffing-position"
+    "Entity:Staffing Timesheet Line": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet-line"
     },
-    "Entity:Staffing Client Contact": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client-contact"
+    "Module:staffing-operations": {
+      "name": "staffing-operations",
+      "description": "Operations",
+      "app_name": "staffing",
+      "icon": "CalendarClock",
+      "in_sidebar": 1
     },
-    "Entity:Staffing Client": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client"
+    "Desk Page Builder:Staffing Operations": {
+      "__root__": "/apps/staffing/modules/staffing-operations/desk-pages/staffing-operations"
     },
-    "Entity:Staffing Site": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-site"
+    "Entity:Staffing Shift": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift"
     },
-    "Entity:Staffing Opportunity Line": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity-line"
-    },
-    "Entity:Staffing Opportunity": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity"
-    },
-    "Entity:Staffing Job Opening": {
-      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-job-opening"
-    },
-    "Entity:Staffing Worker Position": {
-      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-position"
-    },
-    "Entity:Staffing Worker": {
-      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker"
-    },
-    "Entity:Staffing Worker Document": {
-      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-document"
-    },
-    "Entity:Staffing Rate Line": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-line"
-    },
-    "Entity:Staffing Rate Agreement": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-agreement"
-    },
-    "Entity:Staffing Contract Template": {
-      "__root__": "/apps/staffing/modules/staffing/entities/staffing-contract-template"
-    },
-    "Entity:Staffing Process Stage": {
-      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process-stage"
-    },
-    "Entity:Staffing Process": {
-      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process"
+    "Entity:Staffing Shift Assignment": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift-assignment"
     },
     "Entity:Staffing Station": {
       "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-station"
@@ -142,49 +128,8 @@
     "Entity:Staffing Unit Event": {
       "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-unit-event"
     },
-    "Entity:Staffing Shift Assignment": {
-      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift-assignment"
-    },
-    "Entity:Staffing Shift": {
-      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift"
-    },
-    "Entity:Staffing Timesheet Line": {
-      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet-line"
-    },
-    "Entity:Staffing Timesheet": {
-      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet"
-    },
-    "Entity:Staffing Invoice Line": {
-      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice-line"
-    },
-    "Entity:Staffing Invoice": {
-      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice"
-    },
-    "Entity:Staffing Settings": {
-      "__root__": "/apps/staffing/modules/staffing/entities/staffing-settings"
-    },
-    "Staffing Contract Template:Sample Master Services Agreement": {
-      "name": "Sample Master Services Agreement",
-      "kind": "Master Services Agreement",
-      "active": 1,
-      "document_title": "Master Services Agreement",
-      "body": "> **Sample text.** Replace this template with the agreement approved by your attorney before sending it to clients.\n\nThis Master Services Agreement (the \"Agreement\") is entered into on {{today}} between **{{company.name}}** (\"Company\"), {{company.address}}, and **{{client.company_name}}** (\"Client\"), {{client.address}}.\n\n## 1. Services\n\nCompany will provide temporary personnel and related workforce services (the \"Services\") at the Client sites and in the positions described in each Rate Schedule signed by the parties. Each Rate Schedule is part of this Agreement.\n\n## 2. Personnel\n\nAll personnel assigned to Client are employees of Company. Company is responsible for their recruitment, screening, wages, payroll taxes, workers' compensation insurance and benefits required by law. Client directs the daily work at its sites and will not ask personnel to perform tasks outside their assigned position without Company's written approval.\n\n## 3. Client responsibilities\n\nClient will provide a safe workplace, site-specific training and the equipment needed for the work, comply with applicable safety laws, and confirm hours worked when asked by Company.\n\n## 4. Fees and payment\n\nClient will pay the hourly rates set in the applicable Rate Schedule for all hours worked. Overtime is billed at the overtime rate shown there. Company invoices weekly and payment is due on **{{client.payment_terms}}** terms. Late balances may accrue interest as permitted by law.\n\n## 5. Direct hire\n\nIf Client hires a person assigned by Company within 12 months after the person's last assignment, Client will pay Company a conversion fee equal to 20% of the person's first-year base wages, unless the person has worked 520 hours for Client through Company.\n\n## 6. Insurance\n\nEach party will keep general liability insurance and, for Company, workers' compensation insurance as required by law, and will provide certificates on request.\n\n## 7. Term and termination\n\nThis Agreement starts on the date it is signed and continues until terminated by either party with 30 days' written notice. Either party may terminate immediately for a material breach not cured within 10 days of written notice. Client pays for all Services provided up to the termination date.\n\n## 8. Limitation of liability\n\nNeither party is liable for indirect, incidental or consequential damages. Company is not responsible for losses arising from Client's instructions, vehicles or equipment beyond the limits of its insurance.\n\n## 9. General\n\nThis Agreement is governed by the laws of the State of Georgia. It is the entire agreement between the parties regarding the Services and may be amended only in writing, including by electronic signature."
-    },
-    "Staffing Contract Template:Sample Rate Schedule": {
-      "name": "Sample Rate Schedule",
-      "kind": "Rate Schedule",
-      "active": 1,
-      "document_title": "Rate Schedule",
-      "body": "> **Sample text.** Replace this template with the version approved by your attorney before sending it to clients.\n\nThis Rate Schedule **{{agreement.name}}** is issued under the Master Services Agreement between **{{company.name}}** (\"Company\") and **{{client.company_name}}** (\"Client\").\n\n| | |\n|---|---|\n| Site | {{agreement.site}} |\n| Effective from | {{agreement.valid_from}} |\n| Effective until | {{agreement.valid_to}} |\n| Payment terms | {{client.payment_terms}} |\n| Overtime | {{agreement.overtime_multiplier}} × the hourly rate, for hours over 40 per worker per week |\n\n## Rates\n\n{{rates_table}}\n\nRates are per hour worked by each assigned worker and include wages, payroll taxes, workers' compensation and Company's fee. Hours are recorded through Company's attendance system and summarized in weekly invoices.\n\nChanges to the positions or rates in this schedule require a new Rate Schedule signed by both parties."
-    },
-    "Builder:Contact Form Builder": {
+    "Builder:Page Builder": {
       "__app__": "loopar"
-    },
-    "Contact Form Builder:Staffing Applicant": {
-      "__root__": "/apps/staffing/modules/staffing-recruiting/contact-forms/staffing-applicant"
-    },
-    "Contact Form Builder:Staffing Inquiry": {
-      "__root__": "/apps/staffing/modules/staffing-sales/contact-forms/staffing-inquiry"
     },
     "Page Builder:Staffing Clock": {
       "__root__": "/apps/staffing/modules/staffing-operations/pages/staffing-clock"
@@ -192,17 +137,61 @@
     "Page Builder:Staffing Station Kiosk": {
       "__root__": "/apps/staffing/modules/staffing-operations/pages/staffing-station-kiosk"
     },
-    "Builder:Desk Page Builder": {
+    "Builder:Contact Form Builder": {
       "__app__": "loopar"
     },
-    "Desk Page Builder:Staffing Home": {
-      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-home"
+    "Module:staffing-recruiting": {
+      "name": "staffing-recruiting",
+      "description": "Recruiting",
+      "app_name": "staffing",
+      "icon": "UserSearch",
+      "in_sidebar": 1
     },
-    "Desk Page Builder:Staffing Operations": {
-      "__root__": "/apps/staffing/modules/staffing-operations/desk-pages/staffing-operations"
+    "Contact Form Builder:Staffing Applicant": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/contact-forms/staffing-applicant"
     },
-    "Desk Page Builder:Staffing Help": {
-      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-help"
+    "Entity:Staffing Job Opening": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-job-opening"
+    },
+    "Entity:Staffing Worker": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker"
+    },
+    "Entity:Staffing Worker Document": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-document"
+    },
+    "Entity:Staffing Worker Position": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-position"
+    },
+    "Module:staffing-sales": {
+      "name": "staffing-sales",
+      "description": "Sales & Clients",
+      "app_name": "staffing",
+      "icon": "Handshake",
+      "in_sidebar": 1
+    },
+    "Contact Form Builder:Staffing Inquiry": {
+      "__root__": "/apps/staffing/modules/staffing-sales/contact-forms/staffing-inquiry"
+    },
+    "Entity:Staffing Client": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client"
+    },
+    "Entity:Staffing Client Contact": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client-contact"
+    },
+    "Entity:Staffing Opportunity": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity"
+    },
+    "Entity:Staffing Opportunity Line": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity-line"
+    },
+    "Entity:Staffing Rate Agreement": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-agreement"
+    },
+    "Entity:Staffing Rate Line": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-line"
+    },
+    "Entity:Staffing Site": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-site"
     },
     "Entity:Role": {
       "__app__": "loopar"
@@ -221,6 +210,27 @@
       "disabled": 0,
       "description": "Reads everything in the Staffing app; creates and edits only its own records."
     },
+    "Role:Staffing Sales": {
+      "name": "Staffing Sales",
+      "app": "staffing",
+      "is_system_role": 1,
+      "disabled": 0,
+      "description": "Sells the service: website inquiries, opportunities, clients and their sites. Reads positions, job openings and workers."
+    },
+    "Role:Staffing Recruiter": {
+      "name": "Staffing Recruiter",
+      "app": "staffing",
+      "is_system_role": 1,
+      "disabled": 0,
+      "description": "Hires the workforce: job openings, applicants (including Hire), workers and their documents. Reads clients, sites and positions."
+    },
+    "Role:Staffing Supervisor": {
+      "name": "Staffing Supervisor",
+      "app": "staffing",
+      "is_system_role": 1,
+      "disabled": 0,
+      "description": "Runs a site day to day: reads workers, sites, clients and positions, and keeps worker documents up to date."
+    },
     "Entity:Workflow": {
       "__app__": "loopar"
     },
@@ -232,6 +242,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "tr1y94Gaex6fPCh",
           "state": "New",
           "color": "blue",
           "is_initial": 1,
@@ -240,6 +252,8 @@
           "public_label": "Received"
         },
         {
+          "parent_document": "Workflow",
+          "name": "j42IVEgu0YHlMRL",
           "state": "Screening",
           "color": "blue",
           "is_initial": 0,
@@ -248,6 +262,8 @@
           "public_label": "Received"
         },
         {
+          "parent_document": "Workflow",
+          "name": "xnqAOkrRQVZct3U",
           "state": "Interview",
           "color": "violet",
           "is_initial": 0,
@@ -256,6 +272,8 @@
           "public_label": "Interview scheduled"
         },
         {
+          "parent_document": "Workflow",
+          "name": "oD0R55Q74O4jlsf",
           "state": "Background Check",
           "color": "amber",
           "is_initial": 0,
@@ -264,6 +282,8 @@
           "public_label": "In review"
         },
         {
+          "parent_document": "Workflow",
+          "name": "w4DP02H1oFh2EZy",
           "state": "Offer",
           "color": "amber",
           "is_initial": 0,
@@ -272,6 +292,8 @@
           "public_label": "In review"
         },
         {
+          "parent_document": "Workflow",
+          "name": "w12l6JLWKAC45aI",
           "state": "Hired",
           "color": "green",
           "is_initial": 0,
@@ -280,6 +302,8 @@
           "public_label": "Hired"
         },
         {
+          "parent_document": "Workflow",
+          "name": "aKLYaI357Q8AP2M",
           "state": "Rejected",
           "color": "red",
           "is_initial": 0,
@@ -288,6 +312,8 @@
           "public_label": "Not selected"
         },
         {
+          "parent_document": "Workflow",
+          "name": "qbJIn9TqtG216QC",
           "state": "Withdrawn",
           "color": "gray",
           "is_initial": 0,
@@ -298,6 +324,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "WNTIYS61BMWiCtp",
           "action": "Start screening",
           "from_state": "New",
           "to_state": "Screening",
@@ -307,9 +335,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "gkswAKFD3T69191",
           "action": "Schedule interview",
           "from_state": "Screening",
           "to_state": "Interview",
@@ -319,9 +350,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "PdJUn3Myj44RPu1",
           "action": "Run background check",
           "from_state": "Interview",
           "to_state": "Background Check",
@@ -331,9 +365,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "Y1TdnPR1osqI2v7",
           "action": "Make offer",
           "from_state": "Background Check",
           "to_state": "Offer",
@@ -343,9 +380,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "G0FC9BcH46bAZ6y",
           "action": "Hire",
           "from_state": "Offer",
           "to_state": "Hired",
@@ -355,9 +395,12 @@
           "confirm": "Hire this applicant? A Staffing Worker will be created.",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "u26Z4JK18Sm06U7",
           "action": "Reject",
           "from_state": "*",
           "to_state": "Rejected",
@@ -367,9 +410,12 @@
           "confirm": "",
           "notify": "None",
           "style": "destructive",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "VLOMr92v12F6Y3s",
           "action": "Withdraw",
           "from_state": "*",
           "to_state": "Withdrawn",
@@ -379,9 +425,12 @@
           "confirm": "The applicant withdrew?",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 1
+          "allow_submitter": 1,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "XP7BS4fm23MHTZt",
           "action": "Reopen",
           "from_state": "Rejected,Withdrawn",
           "to_state": "Screening",
@@ -391,9 +440,16 @@
           "confirm": "",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         }
       ]
+    },
+    "Entity:Workflow State": {
+      "__app__": "loopar"
+    },
+    "Entity:Workflow Transition": {
+      "__app__": "loopar"
     },
     "Workflow:Staffing Inquiry": {
       "name": "Staffing Inquiry",
@@ -403,6 +459,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "M7l1nX2BaivU748",
           "state": "New",
           "color": "blue",
           "is_initial": 1,
@@ -411,6 +469,8 @@
           "public_label": "Received"
         },
         {
+          "parent_document": "Workflow",
+          "name": "b07tmQvRuqOFa1k",
           "state": "In Review",
           "color": "amber",
           "is_initial": 0,
@@ -419,6 +479,8 @@
           "public_label": "In review"
         },
         {
+          "parent_document": "Workflow",
+          "name": "JuWRnoN8gJ90DmA",
           "state": "Converted",
           "color": "green",
           "is_initial": 0,
@@ -427,6 +489,8 @@
           "public_label": "In progress"
         },
         {
+          "parent_document": "Workflow",
+          "name": "MBSnwF8O710axyb",
           "state": "Discarded",
           "color": "gray",
           "is_initial": 0,
@@ -437,6 +501,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "eZqhjKnlHv66D17",
           "action": "Review",
           "from_state": "New",
           "to_state": "In Review",
@@ -446,9 +512,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "L8D1v4Umn6w7uc7",
           "action": "Create opportunity",
           "from_state": "New,In Review",
           "to_state": "Converted",
@@ -458,9 +527,12 @@
           "confirm": "Create an opportunity (and the client, if new) from this inquiry?",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "mtgf6ynejdo674q",
           "action": "Discard",
           "from_state": "New,In Review",
           "to_state": "Discarded",
@@ -470,9 +542,12 @@
           "confirm": "",
           "notify": "None",
           "style": "destructive",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "pXid4cA3EFH0Wux",
           "action": "Reopen",
           "from_state": "Discarded",
           "to_state": "In Review",
@@ -482,7 +557,8 @@
           "confirm": "",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         }
       ]
     },
@@ -494,6 +570,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "Eqxm2O75AMc67bk",
           "state": "New",
           "color": "blue",
           "is_initial": 1,
@@ -502,6 +580,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "M6ubxl819ycQM2Y",
           "state": "Contacted",
           "color": "blue",
           "is_initial": 0,
@@ -510,6 +590,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "o11Bb4g3xaX7MHe",
           "state": "Site Visit",
           "color": "violet",
           "is_initial": 0,
@@ -518,6 +600,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "fg4T0Dj1wxMP749",
           "state": "Proposal Sent",
           "color": "amber",
           "is_initial": 0,
@@ -526,6 +610,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "T04rSZN9XlA6k1q",
           "state": "Negotiation",
           "color": "amber",
           "is_initial": 0,
@@ -534,6 +620,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "SOg118FrPj6qnAk",
           "state": "Won",
           "color": "green",
           "is_initial": 0,
@@ -542,6 +630,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "YEVxptJ7wF8W67r",
           "state": "Lost",
           "color": "red",
           "is_initial": 0,
@@ -552,6 +642,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "P76xledTRbuLy0Q",
           "action": "Mark contacted",
           "from_state": "New",
           "to_state": "Contacted",
@@ -561,9 +653,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "ofa4t12B2gIm3Y4",
           "action": "Schedule site visit",
           "from_state": "New,Contacted",
           "to_state": "Site Visit",
@@ -573,9 +668,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "Z23W7Y8UHxr7Nd9",
           "action": "Send proposal",
           "from_state": "Contacted,Site Visit",
           "to_state": "Proposal Sent",
@@ -585,9 +683,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "Br1KO4WE247IujG",
           "action": "Negotiate",
           "from_state": "Proposal Sent",
           "to_state": "Negotiation",
@@ -597,9 +698,12 @@
           "confirm": "",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "D9MsZ992YxVCv4K",
           "action": "Mark won",
           "from_state": "Proposal Sent,Negotiation",
           "to_state": "Won",
@@ -609,9 +713,12 @@
           "confirm": "Mark this opportunity as won? The client and its planned sites become Active.",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "xvInqu6i3128GhB",
           "action": "Mark lost",
           "from_state": "*",
           "to_state": "Lost",
@@ -621,9 +728,12 @@
           "confirm": "",
           "notify": "None",
           "style": "destructive",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "AuS5AcGRHW6QZb4",
           "action": "Reopen",
           "from_state": "Lost",
           "to_state": "Contacted",
@@ -633,7 +743,8 @@
           "confirm": "",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         }
       ]
     },
@@ -645,6 +756,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "DY6lwFU424adOKS",
           "state": "Draft",
           "color": "gray",
           "is_initial": 1,
@@ -653,6 +766,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "qT1cEXRfB2N9ag0",
           "state": "Pending Signature",
           "color": "amber",
           "is_initial": 0,
@@ -661,6 +776,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "Pbe24rw46774v4t",
           "state": "Active",
           "color": "green",
           "is_initial": 0,
@@ -669,6 +786,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "BWU79n5RB6CXEFs",
           "state": "Expired",
           "color": "red",
           "is_initial": 0,
@@ -679,6 +798,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "LqoD0Z9yrW8k6lJ",
           "action": "Send for signature",
           "from_state": "Draft",
           "to_state": "Pending Signature",
@@ -692,6 +813,8 @@
           "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "hMF9AXQC1HkVh27",
           "action": "Cancel signature",
           "from_state": "Pending Signature",
           "to_state": "Draft",
@@ -705,6 +828,8 @@
           "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "gJh4157ZN4AntGL",
           "action": "Mark signed",
           "from_state": "Pending Signature",
           "to_state": "Active",
@@ -718,6 +843,8 @@
           "system_only": 1
         },
         {
+          "parent_document": "Workflow",
+          "name": "U6PQF7TKNhayoSw",
           "action": "Mark declined",
           "from_state": "Pending Signature",
           "to_state": "Draft",
@@ -731,6 +858,8 @@
           "system_only": 1
         },
         {
+          "parent_document": "Workflow",
+          "name": "Uk5OR1d4X9pD4n2",
           "action": "Activate",
           "from_state": "Draft",
           "to_state": "Active",
@@ -744,6 +873,8 @@
           "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "eDU6135V19SqIBc",
           "action": "Revise",
           "from_state": "Active",
           "to_state": "Draft",
@@ -757,6 +888,8 @@
           "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "NkmFL0ti7sq6el4",
           "action": "Expire",
           "from_state": "Draft,Active",
           "to_state": "Expired",
@@ -779,6 +912,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "GCLAWRZSa6K42IT",
           "state": "Draft",
           "color": "gray",
           "is_initial": 1,
@@ -787,6 +922,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "cyM28LDUFdpXGEW",
           "state": "Submitted",
           "color": "blue",
           "is_initial": 0,
@@ -795,6 +932,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "Dh43WcQyA6wYjKE",
           "state": "Approved",
           "color": "green",
           "is_initial": 0,
@@ -803,6 +942,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "UJI01odyTH724Nk",
           "state": "Exported",
           "color": "violet",
           "is_initial": 0,
@@ -813,6 +954,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "i0IN98imPvhpxs4",
           "action": "Submit",
           "from_state": "Draft",
           "to_state": "Submitted",
@@ -822,9 +965,12 @@
           "confirm": "Submit the timesheet? Its hours are frozen until it is rejected.",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "mrl6BM9Cvy2c2fn",
           "action": "Approve",
           "from_state": "Submitted",
           "to_state": "Approved",
@@ -834,9 +980,12 @@
           "confirm": "",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "in0y1dwMRKCi4WH",
           "action": "Reject",
           "from_state": "Submitted,Approved",
           "to_state": "Draft",
@@ -846,9 +995,12 @@
           "confirm": "",
           "notify": "None",
           "style": "destructive",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "d2FMS7Tanq7s9lU",
           "action": "Mark exported",
           "from_state": "Approved",
           "to_state": "Exported",
@@ -858,7 +1010,8 @@
           "confirm": "",
           "notify": "None",
           "style": "default",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         }
       ]
     },
@@ -870,6 +1023,8 @@
       "active": 1,
       "states": [
         {
+          "parent_document": "Workflow",
+          "name": "W7IP617vciROAZ1",
           "state": "Draft",
           "color": "gray",
           "is_initial": 1,
@@ -878,6 +1033,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "rODeT7x4H694y60",
           "state": "Sent",
           "color": "blue",
           "is_initial": 0,
@@ -886,6 +1043,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "tJrwdWBIXG4v2l6",
           "state": "Paid",
           "color": "green",
           "is_initial": 0,
@@ -894,6 +1053,8 @@
           "public_label": ""
         },
         {
+          "parent_document": "Workflow",
+          "name": "FE796da7sONiXWB",
           "state": "Void",
           "color": "red",
           "is_initial": 0,
@@ -904,6 +1065,8 @@
       ],
       "transitions": [
         {
+          "parent_document": "Workflow",
+          "name": "N2PZRSGMEAHBLJW",
           "action": "Mark sent",
           "from_state": "Draft",
           "to_state": "Sent",
@@ -913,9 +1076,12 @@
           "confirm": "Mark the invoice as sent to the client?",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "SW6PDx26QX8v9iN",
           "action": "Mark paid",
           "from_state": "Sent",
           "to_state": "Paid",
@@ -925,9 +1091,12 @@
           "confirm": "Record the invoice as fully paid?",
           "notify": "None",
           "style": "primary",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         },
         {
+          "parent_document": "Workflow",
+          "name": "QJQs20E8wBCpv21",
           "action": "Void",
           "from_state": "Draft,Sent",
           "to_state": "Void",
@@ -937,37 +1106,44 @@
           "confirm": "Void the invoice? Its hours become billable again.",
           "notify": "None",
           "style": "destructive",
-          "allow_submitter": 0
+          "allow_submitter": 0,
+          "system_only": 0
         }
       ]
     }
   },
   "postInstaller": {
     "App:staffing": "link",
+    "Entity:Staffing Contract Template": "link",
     "Entity:Staffing Position": "link",
-    "Entity:Staffing Client": "link",
-    "Entity:Staffing Site": "link",
-    "Entity:Staffing Opportunity": "link",
+    "Entity:Staffing Process": "link",
+    "Entity:Staffing Process Stage": "link",
+    "Entity:Staffing Settings": "link",
+    "Entity:Staffing Invoice": "link",
+    "Entity:Staffing Invoice Line": "link",
+    "Entity:Staffing Timesheet": "link",
+    "Entity:Staffing Timesheet Line": "link",
+    "Entity:Staffing Shift": "link",
+    "Entity:Staffing Shift Assignment": "link",
+    "Entity:Staffing Station": "link",
+    "Entity:Staffing Unit": "link",
+    "Entity:Staffing Unit Event": "link",
     "Entity:Staffing Job Opening": "link",
     "Entity:Staffing Worker": "link",
     "Entity:Staffing Worker Document": "link",
-    "Entity:Staffing Settings": "link",
-    "Contact Form Builder:Staffing Applicant": "link",
-    "Contact Form Builder:Staffing Inquiry": "link",
+    "Entity:Staffing Worker Position": "link",
+    "Entity:Staffing Client": "link",
+    "Entity:Staffing Client Contact": "link",
+    "Entity:Staffing Opportunity": "link",
+    "Entity:Staffing Opportunity Line": "link",
+    "Entity:Staffing Rate Agreement": "link",
+    "Entity:Staffing Rate Line": "link",
+    "Entity:Staffing Site": "link",
     "Workflow:Staffing Applicant": "link",
     "Workflow:Staffing Inquiry": "link",
     "Workflow:Staffing Opportunity": "link",
-    "Entity:Staffing Rate Agreement": "link",
-    "Entity:Staffing Shift": "link",
-    "Entity:Staffing Timesheet": "link",
     "Workflow:Staffing Rate Agreement": "link",
     "Workflow:Staffing Timesheet": "link",
-    "Entity:Staffing Invoice": "link",
-    "Workflow:Staffing Invoice": "link",
-    "Entity:Staffing Contract Template": "link",
-    "Entity:Staffing Process": "link",
-    "Entity:Staffing Station": "link",
-    "Entity:Staffing Unit": "link",
-    "Entity:Staffing Unit Event": "link"
+    "Workflow:Staffing Invoice": "link"
   }
 }
