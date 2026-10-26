@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Process Stage",
+  "module": "staffing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 1,
+  "is_builder": 0,
+  "enable_history": 0,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "doc_structure": "[{\"node\": \"sps_1\", \"element\": \"input\", \"data\": {\"name\": \"parent_id\", \"label\": \"Parent ID\", \"type\": \"INTEGER\", \"hidden\": 1}}, {\"node\": \"sps_2\", \"element\": \"input\", \"data\": {\"name\": \"parent_document\", \"label\": \"Parent Entity\", \"type\": \"VARCHAR\", \"hidden\": 1}}, {\"node\": \"sps_3\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"hidden\": 1}}, {\"node\": \"sps_7\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sps_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sps_4\", \"element\": \"input\", \"data\": {\"name\": \"stage\", \"label\": \"Stage\", \"required\": 1, \"in_list_view\": 1}}]}, {\"node\": \"sps_9\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sps_5\", \"element\": \"input\", \"data\": {\"name\": \"target_minutes\", \"label\": \"Target (min)\", \"format\": \"int\", \"in_list_view\": 1, \"description\": \"Expected time to finish the stage.\"}}]}, {\"node\": \"sps_10\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sps_6\", \"element\": \"switch\", \"data\": {\"name\": \"is_final\", \"label\": \"Final\", \"in_list_view\": 1, \"description\": \"The unit is done (e.g. Ready).\"}}]}]}]",
+  "search_fields": "stage",
+  "title_fields": "stage",
+  "naming_series": "",
+  "resources": [],
+  "__ENTITY__": "Entity"
+}

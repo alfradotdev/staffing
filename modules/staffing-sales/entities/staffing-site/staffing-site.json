@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Site",
+  "module": "staffing-sales",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 1,
+  "require_login_to_comment": 0,
+  "search_fields": "name,site_name,client",
+  "title_fields": "site_name",
+  "naming_series": "SITE-.####",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"sst_2\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"sst_1\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1, \"hidden\": 1}}]}, {\"node\": \"sst_9\", \"element\": \"row\", \"data\": {\"layout\": \"[40,40,20]\"}, \"elements\": [{\"node\": \"sst_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_3\", \"element\": \"input\", \"data\": {\"name\": \"site_name\", \"label\": \"Site name\", \"required\": 1, \"in_list_view\": 1, \"searchable\": 1, \"description\": \"e.g. ATL Rental Car Center\"}}]}, {\"node\": \"sst_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_4\", \"element\": \"select\", \"data\": {\"name\": \"client\", \"label\": \"Client\", \"options\": \"Staffing Client\", \"required\": 1, \"in_list_view\": 1, \"searchable\": 1}}]}, {\"node\": \"sst_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_5\", \"element\": \"select\", \"data\": {\"name\": \"status\", \"label\": \"Status\", \"options\": \"Planned\\nActive\\nPaused\\nClosed\", \"default\": \"Planned\", \"in_list_view\": 1}}]}]}, {\"node\": \"sst_18\", \"element\": \"row\", \"data\": {\"layout\": \"[40,25,15,20]\"}, \"elements\": [{\"node\": \"sst_14\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_10\", \"element\": \"input\", \"data\": {\"name\": \"address\", \"label\": \"Address\"}}]}, {\"node\": \"sst_15\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_11\", \"element\": \"input\", \"data\": {\"name\": \"city\", \"label\": \"City\"}}]}, {\"node\": \"sst_16\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_12\", \"element\": \"input\", \"data\": {\"name\": \"state\", \"label\": \"State\", \"default\": \"GA\"}}]}, {\"node\": \"sst_17\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_13\", \"element\": \"input\", \"data\": {\"name\": \"zip_code\", \"label\": \"ZIP code\"}}]}]}, {\"node\": \"sst_26\", \"element\": \"card\", \"data\": {\"label\": \"Location\"}, \"elements\": [{\"node\": \"sst_25\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sst_22\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_19\", \"element\": \"input\", \"data\": {\"name\": \"latitude\", \"label\": \"Latitude\", \"format\": \"decimal\"}}]}, {\"node\": \"sst_23\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_20\", \"element\": \"input\", \"data\": {\"name\": \"longitude\", \"label\": \"Longitude\", \"format\": \"decimal\"}}]}, {\"node\": \"sst_24\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_21\", \"element\": \"input\", \"data\": {\"name\": \"geofence_radius_m\", \"label\": \"Geofence radius (m)\", \"format\": \"int\", \"default\": \"150\", \"description\": \"Used by GPS check-in in phase 2.\"}}]}]}]}, {\"node\": \"sst_31\", \"element\": \"row\", \"data\": {\"layout\": \"[50,50]\"}, \"elements\": [{\"node\": \"sst_29\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_27\", \"element\": \"input\", \"data\": {\"name\": \"site_contact\", \"label\": \"On-site contact\", \"description\": \"Name and phone of the person in charge.\"}}]}, {\"node\": \"sst_30\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sst_28\", \"element\": \"textarea\", \"data\": {\"name\": \"access_notes\", \"label\": \"Access notes\", \"description\": \"Airport badges, parking, uniforms\\u2026\"}}]}]}]",
+  "__ENTITY__": "Entity"
+}

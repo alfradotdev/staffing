@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Position",
+  "module": "staffing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "search_fields": "name",
+  "title_fields": "name",
+  "naming_series": "",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"spo_7\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\", \"layout\": \"[50,25,25]\"}, \"elements\": [{\"node\": \"spo_2\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_1\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Position\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1, \"description\": \"e.g. Shuttle Driver, Lot Porter, Detailer\"}}]}, {\"node\": \"spo_4\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_3\", \"element\": \"select\", \"data\": {\"name\": \"category\", \"label\": \"Category\", \"options\": \"Driving\\nLot Operations\\nDetailing\\nCleaning\\nCustomer Service\\nDispatch & Logistics\\nAdministrative\\nQuality Control\\nSupervision\", \"in_list_view\": 1}}]}, {\"node\": \"spo_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_5\", \"element\": \"switch\", \"data\": {\"name\": \"active\", \"label\": \"Active\", \"default\": 1, \"in_list_view\": 1}}]}]}, {\"node\": \"spo_14\", \"element\": \"row\", \"data\": {\"layout\": \"[25,25,25,25]\"}, \"elements\": [{\"node\": \"spo_svc_col\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_service\", \"element\": \"select\", \"data\": {\"name\": \"service\", \"label\": \"Service\", \"options\": \"Service\", \"in_list_view\": 1, \"description\": \"Website service this position is sold under. Inquiries for that service propose this position.\"}}]}, {\"node\": \"spo_11\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_8\", \"element\": \"select\", \"data\": {\"name\": \"license_required\", \"label\": \"License required\", \"options\": \"None\\nDriver License\\nCDL\", \"default\": \"None\", \"in_list_view\": 1}}]}, {\"node\": \"spo_12\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_9\", \"element\": \"input\", \"data\": {\"name\": \"default_pay_rate\", \"label\": \"Default pay rate (/h)\", \"format\": \"currency\", \"in_list_view\": 1, \"description\": \"Hourly pay to the worker.\"}}]}, {\"node\": \"spo_13\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spo_10\", \"element\": \"input\", \"data\": {\"name\": \"default_bill_rate\", \"label\": \"Default bill rate (/h)\", \"format\": \"currency\", \"in_list_view\": 1, \"description\": \"Hourly rate charged to the client.\"}}]}]}, {\"node\": \"spo_15\", \"element\": \"markdown_input\", \"data\": {\"name\": \"description\", \"label\": \"Description\"}}]",
+  "__ENTITY__": "Entity"
+}

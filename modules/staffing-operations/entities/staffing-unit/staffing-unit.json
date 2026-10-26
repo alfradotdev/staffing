@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Unit",
+  "module": "staffing-operations",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 0,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "doc_structure": "[{\"node\": \"sun_1\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"sun_2\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Unit code\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1, \"description\": \"Scanned identifier: unit number, plate or VIN.\"}}]}, {\"node\": \"sun_6\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sun_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_3\", \"element\": \"select\", \"data\": {\"name\": \"client\", \"label\": \"Client\", \"options\": \"Staffing Client\", \"in_list_view\": 1}}]}, {\"node\": \"sun_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_4\", \"element\": \"input\", \"data\": {\"name\": \"vin\", \"label\": \"VIN\", \"searchable\": 1}}]}, {\"node\": \"sun_9\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_5\", \"element\": \"input\", \"data\": {\"name\": \"plate\", \"label\": \"Plate\", \"searchable\": 1}}]}]}, {\"node\": \"sun_13\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sun_14\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_10\", \"element\": \"input\", \"data\": {\"name\": \"year\", \"label\": \"Year\"}}]}, {\"node\": \"sun_15\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_11\", \"element\": \"input\", \"data\": {\"name\": \"make\", \"label\": \"Make\", \"in_list_view\": 1}}]}, {\"node\": \"sun_16\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_12\", \"element\": \"input\", \"data\": {\"name\": \"model\", \"label\": \"Model\", \"in_list_view\": 1}}]}]}, {\"node\": \"sun_24\", \"element\": \"card\", \"data\": {\"label\": \"Status\"}, \"elements\": [{\"node\": \"sun_20\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sun_21\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_17\", \"element\": \"input\", \"data\": {\"name\": \"current_stage\", \"label\": \"Current stage\", \"in_list_view\": 1, \"readonly\": 1}}]}, {\"node\": \"sun_22\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_18\", \"element\": \"select\", \"data\": {\"name\": \"current_station\", \"label\": \"Station\", \"options\": \"Staffing Station\", \"readonly\": 1}}]}, {\"node\": \"sun_23\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sun_19\", \"element\": \"date_time\", \"data\": {\"name\": \"last_event_at\", \"label\": \"Last event\", \"in_list_view\": 1, \"readonly\": 1}}]}]}]}]",
+  "search_fields": "name,vin,plate",
+  "title_fields": "name",
+  "naming_series": "",
+  "resources": [],
+  "__ENTITY__": "Entity"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Timesheet Line",
+  "module": "staffing-billing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 1,
+  "is_builder": 0,
+  "enable_history": 0,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "search_fields": "shift",
+  "title_fields": "work_date",
+  "naming_series": "",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"stl_1\", \"element\": \"input\", \"data\": {\"name\": \"parent_id\", \"label\": \"Parent ID\", \"type\": \"INTEGER\", \"hidden\": 1}}, {\"node\": \"stl_2\", \"element\": \"input\", \"data\": {\"name\": \"parent_document\", \"label\": \"Parent Entity\", \"type\": \"VARCHAR\", \"hidden\": 1}}, {\"node\": \"stl_3\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"hidden\": 1}}, {\"node\": \"stl_18\", \"element\": \"row\", \"data\": {\"layout\": \"[14,14,16,16,12,14,14]\"}, \"elements\": [{\"node\": \"stl_11\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_4\", \"element\": \"date\", \"data\": {\"name\": \"work_date\", \"label\": \"Date\", \"in_list_view\": 1}}]}, {\"node\": \"stl_12\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_5\", \"element\": \"select\", \"data\": {\"name\": \"shift\", \"label\": \"Shift\", \"options\": \"Staffing Shift\", \"in_list_view\": 1}}]}, {\"node\": \"stl_13\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_6\", \"element\": \"select\", \"data\": {\"name\": \"site\", \"label\": \"Site\", \"options\": \"Staffing Site\", \"in_list_view\": 1}}]}, {\"node\": \"stl_14\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_7\", \"element\": \"select\", \"data\": {\"name\": \"position\", \"label\": \"Position\", \"options\": \"Staffing Position\", \"in_list_view\": 1}}]}, {\"node\": \"stl_15\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_8\", \"element\": \"input\", \"data\": {\"name\": \"hours\", \"label\": \"Hours\", \"format\": \"decimal\", \"in_list_view\": 1}}]}, {\"node\": \"stl_16\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_9\", \"element\": \"input\", \"data\": {\"name\": \"pay_rate\", \"label\": \"Pay rate\", \"format\": \"currency\", \"in_list_view\": 1}}]}, {\"node\": \"stl_17\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"stl_10\", \"element\": \"input\", \"data\": {\"name\": \"bill_rate\", \"label\": \"Bill rate\", \"format\": \"currency\", \"in_list_view\": 1}}]}]}, {\"node\": \"stl_19\", \"element\": \"input\", \"data\": {\"name\": \"overtime_multiplier\", \"label\": \"Overtime multiplier\", \"format\": \"decimal\", \"hidden\": 1}}, {\"node\": \"stl_invoice\", \"element\": \"select\", \"data\": {\"name\": \"invoice\", \"label\": \"Invoice\", \"options\": \"Staffing Invoice\", \"readonly\": 1, \"hidden\": 1}}]",
+  "__ENTITY__": "Entity"
+}

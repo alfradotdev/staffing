@@ -1,7 +1,7 @@
 {
   "App": {
     "name": "staffing",
-    "version": "1.0.8"
+    "version": "1.10.1"
   },
   "documents": {
     "Builder:Page Builder": {
@@ -16,147 +16,193 @@
     "App:staffing": {
       "name": "staffing",
       "description": "Staffing — Fleet & operations staffing (demo)",
-      "version": "1.0.8",
+      "version": "1.10.1",
       "autor": "alfredrz2012@gmail.com",
       "icon": "Bus",
-      "logo": "[{\"name\":\"staffing-logo.svg\",\"size\":11544,\"type\":\"image\",\"src\":\"/assets/public/staffing-logo.svg\"}]",
-      "logo_dark": "[{\"name\":\"staffing-logo-dark.svg\",\"size\":11544,\"type\":\"image\",\"src\":\"/assets/public/staffing-logo-dark.svg\"}]",
-      "logo_mini": "[{\"name\":\"staffing-mark.svg\",\"size\":495,\"type\":\"image\",\"src\":\"/assets/public/staffing-mark.svg\"}]",
-      "logo_mini_dark": "[{\"name\":\"staffing-mark-dark.svg\",\"size\":495,\"type\":\"image\",\"src\":\"/assets/public/staffing-mark-dark.svg\"}]",
-      "favicon": "[{\"name\":\"staffing-favicon.ico\",\"size\":8950,\"type\":\"image\",\"src\":\"/assets/public/staffing-favicon.ico\"}]",
+      "logo": "",
+      "logo_dark": "",
+      "logo_mini": "",
+      "logo_mini_dark": "",
+      "favicon": "",
       "info": "",
-      "has_website": 1,
-      "logo_width": 50,
-      "logo_height": "70",
+      "has_website": 0,
+      "logo_width": 0,
+      "logo_height": "",
       "gap": "",
       "col_padding": "",
-      "has_footer": 1,
-      "footer": "<div style=\"display: flex; flex-wrap: wrap; justify-content: space-between; padding: 40px 20px; color: inherit; gap: 30px;\">\r\n  <div style=\"flex: 1; min-width: 260px;\">\r\n    ### Staffing\r\n\r\n    Supervised fleet and operations staffing for metro Atlanta: shuttle drivers, lot porters, detailers, cleaning crews and on-site supervisors.\r\n  </div>\r\n\r\n  <div style=\"flex: 1; min-width: 200px;\">\r\n    ### Services\r\n\r\n    * [Shuttle Drivers](/services)\r\n    * [Lot Porters](/services)\r\n    * [Car Wash & Detailing](/services)\r\n    * [Cleaning Crews](/services)\r\n    * [On-Site Supervision](/services)\r\n  </div>\r\n\r\n  <div style=\"flex: 1; min-width: 200px;\">\r\n    ### Contact\r\n\r\n    **Phone:** (404) 555-0142\r\n\r\n    **Email:** [hello@staffing.example](mailto\\:hello@staffing.example)\r\n\r\n    **Area:** Metro Atlanta, GA\r\n\r\n    [Apply for a job →](/careers)\r\n  </div>\r\n</div>",
-      "has_copyright": 1,
-      "copyright": "<div style=\"text-align: center; padding: 20px; border-top: 1px solid rgba(128,128,128,0.3); color: inherit; font-size: 0.9em;\">\r\n  © 2026 **Staffing**. All rights reserved.\r\n\r\n  <span style=\"opacity: 0.6; font-size: 0.85em;\">Powered by </span><a href=\"https://loopar.build\" target=\"_blank\" style=\"color: inherit;\">Loopar</a>\r\n</div>",
-      "fixed": 1,
-      "logo_position": "center",
-      "rounded": "sm",
+      "has_footer": 0,
+      "footer": "",
+      "has_copyright": 0,
+      "copyright": "",
+      "fixed": 0,
+      "logo_position": "",
+      "rounded": "",
       "show_user_section": 0,
-      "solid": 1,
+      "solid": 0,
       "opacity": "",
-      "menu_items": [
-        {
-          "parent_document": "App",
-          "name": "UyENZOL7VBSC4hG",
-          "page": "Staffing Home",
-          "link": "Home",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "apA7v0V1Of2PeiL",
-          "page": "Staffing Services",
-          "link": "Services",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "Pm70Oy1aVE75FfL",
-          "page": "Staffing Industries",
-          "link": "Industries",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "AUDW5uy7687g2k5",
-          "page": "Staffing Careers",
-          "link": "Careers",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "HJx3khNF27Rr7W1",
-          "page": "Staffing About",
-          "link": "About",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "dsCw9g148WrtGl1",
-          "page": "Staffing Portal",
-          "link": "Live Demo",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        },
-        {
-          "parent_document": "App",
-          "name": "ZZ1am1oQn7fpg87",
-          "page": "Staffing Contact",
-          "link": "Contact",
-          "parent_menu": null,
-          "document_parent_name": null,
-          "router_only": 0
-        }
-      ],
-      "menu_actions": [
-        {
-          "parent_document": "App",
-          "name": "LYO0gkE5IGP6sA1",
-          "icon": "Phone",
-          "action": "/contact"
-        }
-      ],
-      "theme": "{\"theme\":\"green\",\"darkMode\":\"auto\",\"darkIntensity\":0.15,\"darkCustomColor\":\"#0a0a0a\",\"includeTitles\":true}"
-    },
-    "Entity:Module Group": {
-      "__app__": "loopar"
-    },
-    "Module Group:modules": {
-      "name": "modules",
-      "description": "Modules",
-      "in_sidebar": 1
+      "menu_items": [],
+      "menu_actions": [],
+      "theme": ""
     },
     "Module:staffing": {
       "name": "staffing",
-      "description": "staffing",
+      "description": "Setup",
       "app_name": "staffing",
-      "module_group": "modules",
-      "icon": "Bus",
+      "icon": "Settings",
       "in_sidebar": 1
     },
-    "Page Builder:Staffing About": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-about"
+    "Module:staffing-sales": {
+      "name": "staffing-sales",
+      "description": "Sales & Clients",
+      "app_name": "staffing",
+      "icon": "Handshake",
+      "in_sidebar": 1
     },
-    "Entity:Menu Item": {
+    "Module:staffing-recruiting": {
+      "name": "staffing-recruiting",
+      "description": "Recruiting",
+      "app_name": "staffing",
+      "icon": "UserSearch",
+      "in_sidebar": 1
+    },
+    "Module:staffing-operations": {
+      "name": "staffing-operations",
+      "description": "Operations",
+      "app_name": "staffing",
+      "icon": "CalendarClock",
+      "in_sidebar": 1
+    },
+    "Module:staffing-billing": {
+      "name": "staffing-billing",
+      "description": "Billing & Payroll",
+      "app_name": "staffing",
+      "icon": "Receipt",
+      "in_sidebar": 1
+    },
+    "Entity:Entity": {
       "__app__": "loopar"
     },
-    "Entity:Menu Action": {
+    "Entity:User Directory": {
       "__app__": "loopar"
     },
-    "Page Builder:Staffing Careers": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-careers"
+    "Entity:Signature Request": {
+      "__app__": "loopar"
     },
-    "Page Builder:Staffing Contact": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-contact"
+    "Entity:Staffing Position": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-position"
     },
-    "Page Builder:Staffing Home": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-home"
+    "Entity:Staffing Client Contact": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client-contact"
     },
-    "Page Builder:Staffing Industries": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-industries"
+    "Entity:Staffing Client": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client"
     },
-    "Page Builder:Staffing Portal": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-portal"
+    "Entity:Staffing Site": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-site"
     },
-    "Page Builder:Staffing Services": {
-      "__root__": "/apps/staffing/modules/staffing/pages/staffing-services"
+    "Entity:Staffing Opportunity Line": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity-line"
+    },
+    "Entity:Staffing Opportunity": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity"
+    },
+    "Entity:Staffing Job Opening": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-job-opening"
+    },
+    "Entity:Staffing Worker Position": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-position"
+    },
+    "Entity:Staffing Worker": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker"
+    },
+    "Entity:Staffing Worker Document": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/entities/staffing-worker-document"
+    },
+    "Entity:Staffing Rate Line": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-line"
+    },
+    "Entity:Staffing Rate Agreement": {
+      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-rate-agreement"
+    },
+    "Entity:Staffing Contract Template": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-contract-template"
+    },
+    "Entity:Staffing Process Stage": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process-stage"
+    },
+    "Entity:Staffing Process": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-process"
+    },
+    "Entity:Staffing Station": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-station"
+    },
+    "Entity:Staffing Unit": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-unit"
+    },
+    "Entity:Staffing Unit Event": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-unit-event"
+    },
+    "Entity:Staffing Shift Assignment": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift-assignment"
+    },
+    "Entity:Staffing Shift": {
+      "__root__": "/apps/staffing/modules/staffing-operations/entities/staffing-shift"
+    },
+    "Entity:Staffing Timesheet Line": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet-line"
+    },
+    "Entity:Staffing Timesheet": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-timesheet"
+    },
+    "Entity:Staffing Invoice Line": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice-line"
+    },
+    "Entity:Staffing Invoice": {
+      "__root__": "/apps/staffing/modules/staffing-billing/entities/staffing-invoice"
+    },
+    "Entity:Staffing Settings": {
+      "__root__": "/apps/staffing/modules/staffing/entities/staffing-settings"
+    },
+    "Staffing Contract Template:Sample Master Services Agreement": {
+      "name": "Sample Master Services Agreement",
+      "kind": "Master Services Agreement",
+      "active": 1,
+      "document_title": "Master Services Agreement",
+      "body": "> **Sample text.** Replace this template with the agreement approved by your attorney before sending it to clients.\n\nThis Master Services Agreement (the \"Agreement\") is entered into on {{today}} between **{{company.name}}** (\"Company\"), {{company.address}}, and **{{client.company_name}}** (\"Client\"), {{client.address}}.\n\n## 1. Services\n\nCompany will provide temporary personnel and related workforce services (the \"Services\") at the Client sites and in the positions described in each Rate Schedule signed by the parties. Each Rate Schedule is part of this Agreement.\n\n## 2. Personnel\n\nAll personnel assigned to Client are employees of Company. Company is responsible for their recruitment, screening, wages, payroll taxes, workers' compensation insurance and benefits required by law. Client directs the daily work at its sites and will not ask personnel to perform tasks outside their assigned position without Company's written approval.\n\n## 3. Client responsibilities\n\nClient will provide a safe workplace, site-specific training and the equipment needed for the work, comply with applicable safety laws, and confirm hours worked when asked by Company.\n\n## 4. Fees and payment\n\nClient will pay the hourly rates set in the applicable Rate Schedule for all hours worked. Overtime is billed at the overtime rate shown there. Company invoices weekly and payment is due on **{{client.payment_terms}}** terms. Late balances may accrue interest as permitted by law.\n\n## 5. Direct hire\n\nIf Client hires a person assigned by Company within 12 months after the person's last assignment, Client will pay Company a conversion fee equal to 20% of the person's first-year base wages, unless the person has worked 520 hours for Client through Company.\n\n## 6. Insurance\n\nEach party will keep general liability insurance and, for Company, workers' compensation insurance as required by law, and will provide certificates on request.\n\n## 7. Term and termination\n\nThis Agreement starts on the date it is signed and continues until terminated by either party with 30 days' written notice. Either party may terminate immediately for a material breach not cured within 10 days of written notice. Client pays for all Services provided up to the termination date.\n\n## 8. Limitation of liability\n\nNeither party is liable for indirect, incidental or consequential damages. Company is not responsible for losses arising from Client's instructions, vehicles or equipment beyond the limits of its insurance.\n\n## 9. General\n\nThis Agreement is governed by the laws of the State of Georgia. It is the entire agreement between the parties regarding the Services and may be amended only in writing, including by electronic signature."
+    },
+    "Staffing Contract Template:Sample Rate Schedule": {
+      "name": "Sample Rate Schedule",
+      "kind": "Rate Schedule",
+      "active": 1,
+      "document_title": "Rate Schedule",
+      "body": "> **Sample text.** Replace this template with the version approved by your attorney before sending it to clients.\n\nThis Rate Schedule **{{agreement.name}}** is issued under the Master Services Agreement between **{{company.name}}** (\"Company\") and **{{client.company_name}}** (\"Client\").\n\n| | |\n|---|---|\n| Site | {{agreement.site}} |\n| Effective from | {{agreement.valid_from}} |\n| Effective until | {{agreement.valid_to}} |\n| Payment terms | {{client.payment_terms}} |\n| Overtime | {{agreement.overtime_multiplier}} × the hourly rate, for hours over 40 per worker per week |\n\n## Rates\n\n{{rates_table}}\n\nRates are per hour worked by each assigned worker and include wages, payroll taxes, workers' compensation and Company's fee. Hours are recorded through Company's attendance system and summarized in weekly invoices.\n\nChanges to the positions or rates in this schedule require a new Rate Schedule signed by both parties."
+    },
+    "Builder:Contact Form Builder": {
+      "__app__": "loopar"
+    },
+    "Contact Form Builder:Staffing Applicant": {
+      "__root__": "/apps/staffing/modules/staffing-recruiting/contact-forms/staffing-applicant"
+    },
+    "Contact Form Builder:Staffing Inquiry": {
+      "__root__": "/apps/staffing/modules/staffing-sales/contact-forms/staffing-inquiry"
+    },
+    "Page Builder:Staffing Clock": {
+      "__root__": "/apps/staffing/modules/staffing-operations/pages/staffing-clock"
+    },
+    "Page Builder:Staffing Station Kiosk": {
+      "__root__": "/apps/staffing/modules/staffing-operations/pages/staffing-station-kiosk"
+    },
+    "Builder:Desk Page Builder": {
+      "__app__": "loopar"
+    },
+    "Desk Page Builder:Staffing Home": {
+      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-home"
+    },
+    "Desk Page Builder:Staffing Operations": {
+      "__root__": "/apps/staffing/modules/staffing-operations/desk-pages/staffing-operations"
+    },
+    "Desk Page Builder:Staffing Help": {
+      "__root__": "/apps/staffing/modules/staffing/desk-pages/staffing-help"
     },
     "Entity:Role": {
       "__app__": "loopar"
@@ -174,9 +220,754 @@
       "is_system_role": 1,
       "disabled": 0,
       "description": "Reads everything in the Staffing app; creates and edits only its own records."
+    },
+    "Entity:Workflow": {
+      "__app__": "loopar"
+    },
+    "Workflow:Staffing Applicant": {
+      "name": "Staffing Applicant",
+      "document": "Staffing Applicant",
+      "state_field": "stage",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "New",
+          "color": "blue",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "Received"
+        },
+        {
+          "state": "Screening",
+          "color": "blue",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "Received"
+        },
+        {
+          "state": "Interview",
+          "color": "violet",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "Interview scheduled"
+        },
+        {
+          "state": "Background Check",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "In review"
+        },
+        {
+          "state": "Offer",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "In review"
+        },
+        {
+          "state": "Hired",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": "Hired"
+        },
+        {
+          "state": "Rejected",
+          "color": "red",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": "Not selected"
+        },
+        {
+          "state": "Withdrawn",
+          "color": "gray",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": "Withdrawn"
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Start screening",
+          "from_state": "New",
+          "to_state": "Screening",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Schedule interview",
+          "from_state": "Screening",
+          "to_state": "Interview",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "interview_at",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Run background check",
+          "from_state": "Interview",
+          "to_state": "Background Check",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Make offer",
+          "from_state": "Background Check",
+          "to_state": "Offer",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Hire",
+          "from_state": "Offer",
+          "to_state": "Hired",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "",
+          "method": "hire",
+          "confirm": "Hire this applicant? A Staffing Worker will be created.",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Reject",
+          "from_state": "*",
+          "to_state": "Rejected",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "rejection_reason",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Withdraw",
+          "from_state": "*",
+          "to_state": "Withdrawn",
+          "allowed_roles": "Staffing Recruiter, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "The applicant withdrew?",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 1
+        },
+        {
+          "action": "Reopen",
+          "from_state": "Rejected,Withdrawn",
+          "to_state": "Screening",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0
+        }
+      ]
+    },
+    "Workflow:Staffing Inquiry": {
+      "name": "Staffing Inquiry",
+      "document": "Staffing Inquiry",
+      "state_field": "stage",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "New",
+          "color": "blue",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "Received"
+        },
+        {
+          "state": "In Review",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": "In review"
+        },
+        {
+          "state": "Converted",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": "In progress"
+        },
+        {
+          "state": "Discarded",
+          "color": "gray",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": "Closed"
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Review",
+          "from_state": "New",
+          "to_state": "In Review",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Create opportunity",
+          "from_state": "New,In Review",
+          "to_state": "Converted",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "createOpportunity",
+          "confirm": "Create an opportunity (and the client, if new) from this inquiry?",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Discard",
+          "from_state": "New,In Review",
+          "to_state": "Discarded",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "internal_notes",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Reopen",
+          "from_state": "Discarded",
+          "to_state": "In Review",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0
+        }
+      ]
+    },
+    "Workflow:Staffing Opportunity": {
+      "name": "Staffing Opportunity",
+      "document": "Staffing Opportunity",
+      "state_field": "stage",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "New",
+          "color": "blue",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Contacted",
+          "color": "blue",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Site Visit",
+          "color": "violet",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Proposal Sent",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Negotiation",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Won",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Lost",
+          "color": "red",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Mark contacted",
+          "from_state": "New",
+          "to_state": "Contacted",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Schedule site visit",
+          "from_state": "New,Contacted",
+          "to_state": "Site Visit",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "next_step_date",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Send proposal",
+          "from_state": "Contacted,Site Visit",
+          "to_state": "Proposal Sent",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Negotiate",
+          "from_state": "Proposal Sent",
+          "to_state": "Negotiation",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Mark won",
+          "from_state": "Proposal Sent,Negotiation",
+          "to_state": "Won",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "Mark this opportunity as won? The client and its planned sites become Active.",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Mark lost",
+          "from_state": "*",
+          "to_state": "Lost",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "lost_reason",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Reopen",
+          "from_state": "Lost",
+          "to_state": "Contacted",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0
+        }
+      ]
+    },
+    "Workflow:Staffing Rate Agreement": {
+      "name": "Staffing Rate Agreement",
+      "document": "Staffing Rate Agreement",
+      "state_field": "status",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "Draft",
+          "color": "gray",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Pending Signature",
+          "color": "amber",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Active",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Expired",
+          "color": "red",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Send for signature",
+          "from_state": "Draft",
+          "to_state": "Pending Signature",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "signer_name,signer_email",
+          "method": "sendForSignature",
+          "confirm": "Email the contract to the signer for e-signature?",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0,
+          "system_only": 0
+        },
+        {
+          "action": "Cancel signature",
+          "from_state": "Pending Signature",
+          "to_state": "Draft",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "cancelSignature",
+          "confirm": "Cancel the pending signature? The link sent to the client stops working.",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0,
+          "system_only": 0
+        },
+        {
+          "action": "Mark signed",
+          "from_state": "Pending Signature",
+          "to_state": "Active",
+          "allowed_roles": "",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0,
+          "system_only": 1
+        },
+        {
+          "action": "Mark declined",
+          "from_state": "Pending Signature",
+          "to_state": "Draft",
+          "allowed_roles": "",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0,
+          "system_only": 1
+        },
+        {
+          "action": "Activate",
+          "from_state": "Draft",
+          "to_state": "Active",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "Activate without an e-signature (e.g. a paper contract)? Shifts and timesheets of the client will use these rates.",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0,
+          "system_only": 0
+        },
+        {
+          "action": "Revise",
+          "from_state": "Active",
+          "to_state": "Draft",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0,
+          "system_only": 0
+        },
+        {
+          "action": "Expire",
+          "from_state": "Draft,Active",
+          "to_state": "Expired",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "valid_to",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0,
+          "system_only": 0
+        }
+      ]
+    },
+    "Workflow:Staffing Timesheet": {
+      "name": "Staffing Timesheet",
+      "document": "Staffing Timesheet",
+      "state_field": "status",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "Draft",
+          "color": "gray",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Submitted",
+          "color": "blue",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Approved",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Exported",
+          "color": "violet",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Submit",
+          "from_state": "Draft",
+          "to_state": "Submitted",
+          "allowed_roles": "Staffing Supervisor, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "Submit the timesheet? Its hours are frozen until it is rejected.",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Approve",
+          "from_state": "Submitted",
+          "to_state": "Approved",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Reject",
+          "from_state": "Submitted,Approved",
+          "to_state": "Draft",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "review_notes",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Mark exported",
+          "from_state": "Approved",
+          "to_state": "Exported",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "payroll_batch",
+          "method": "",
+          "confirm": "",
+          "notify": "None",
+          "style": "default",
+          "allow_submitter": 0
+        }
+      ]
+    },
+    "Workflow:Staffing Invoice": {
+      "name": "Staffing Invoice",
+      "document": "Staffing Invoice",
+      "state_field": "status",
+      "app": "staffing",
+      "active": 1,
+      "states": [
+        {
+          "state": "Draft",
+          "color": "gray",
+          "is_initial": 1,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Sent",
+          "color": "blue",
+          "is_initial": 0,
+          "is_final": 0,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Paid",
+          "color": "green",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        },
+        {
+          "state": "Void",
+          "color": "red",
+          "is_initial": 0,
+          "is_final": 1,
+          "show_on_board": 1,
+          "public_label": ""
+        }
+      ],
+      "transitions": [
+        {
+          "action": "Mark sent",
+          "from_state": "Draft",
+          "to_state": "Sent",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "Mark the invoice as sent to the client?",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Mark paid",
+          "from_state": "Sent",
+          "to_state": "Paid",
+          "allowed_roles": "Staffing Sales, Staffing Manager",
+          "required_fields": "",
+          "method": "",
+          "confirm": "Record the invoice as fully paid?",
+          "notify": "None",
+          "style": "primary",
+          "allow_submitter": 0
+        },
+        {
+          "action": "Void",
+          "from_state": "Draft,Sent",
+          "to_state": "Void",
+          "allowed_roles": "Staffing Manager",
+          "required_fields": "notes",
+          "method": "",
+          "confirm": "Void the invoice? Its hours become billable again.",
+          "notify": "None",
+          "style": "destructive",
+          "allow_submitter": 0
+        }
+      ]
     }
   },
   "postInstaller": {
-    "App:staffing": "link"
+    "App:staffing": "link",
+    "Entity:Staffing Position": "link",
+    "Entity:Staffing Client": "link",
+    "Entity:Staffing Site": "link",
+    "Entity:Staffing Opportunity": "link",
+    "Entity:Staffing Job Opening": "link",
+    "Entity:Staffing Worker": "link",
+    "Entity:Staffing Worker Document": "link",
+    "Entity:Staffing Settings": "link",
+    "Contact Form Builder:Staffing Applicant": "link",
+    "Contact Form Builder:Staffing Inquiry": "link",
+    "Workflow:Staffing Applicant": "link",
+    "Workflow:Staffing Inquiry": "link",
+    "Workflow:Staffing Opportunity": "link",
+    "Entity:Staffing Rate Agreement": "link",
+    "Entity:Staffing Shift": "link",
+    "Entity:Staffing Timesheet": "link",
+    "Workflow:Staffing Rate Agreement": "link",
+    "Workflow:Staffing Timesheet": "link",
+    "Entity:Staffing Invoice": "link",
+    "Workflow:Staffing Invoice": "link",
+    "Entity:Staffing Contract Template": "link",
+    "Entity:Staffing Process": "link",
+    "Entity:Staffing Station": "link",
+    "Entity:Staffing Unit": "link",
+    "Entity:Staffing Unit Event": "link"
   }
 }

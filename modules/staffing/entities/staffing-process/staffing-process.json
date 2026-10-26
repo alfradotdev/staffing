@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Process",
+  "module": "staffing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "doc_structure": "[{\"node\": \"spr_1\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"spr_2\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Process\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1}}]}, {\"node\": \"spr_5\", \"element\": \"row\", \"data\": {\"layout\": \"[50,50]\"}, \"elements\": [{\"node\": \"spr_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spr_3\", \"element\": \"select\", \"data\": {\"name\": \"position\", \"label\": \"Position\", \"options\": \"Staffing Position\", \"description\": \"Role that works the process (optional).\"}}]}, {\"node\": \"spr_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"spr_4\", \"element\": \"switch\", \"data\": {\"name\": \"active\", \"label\": \"Active\", \"default\": 1, \"in_list_view\": 1}}]}]}, {\"node\": \"spr_8\", \"element\": \"textarea\", \"data\": {\"name\": \"description\", \"label\": \"Description\"}}, {\"node\": \"spr_10\", \"element\": \"card\", \"data\": {\"label\": \"Stages\"}, \"elements\": [{\"node\": \"spr_9\", \"element\": \"form_table\", \"data\": {\"name\": \"stages\", \"label\": \"Stages\", \"options\": \"Staffing Process Stage\", \"description\": \"In order. Stations record units moving through them.\"}}]}]",
+  "search_fields": "name",
+  "title_fields": "name",
+  "naming_series": "",
+  "resources": [],
+  "__ENTITY__": "Entity"
+}

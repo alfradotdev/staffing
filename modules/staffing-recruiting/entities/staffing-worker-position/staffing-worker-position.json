@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Worker Position",
+  "module": "staffing-recruiting",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 1,
+  "is_builder": 0,
+  "enable_history": 0,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "search_fields": "position",
+  "title_fields": "position",
+  "naming_series": "",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"swp_1\", \"element\": \"input\", \"data\": {\"name\": \"parent_id\", \"label\": \"Parent ID\", \"type\": \"INTEGER\", \"hidden\": 1}}, {\"node\": \"swp_2\", \"element\": \"input\", \"data\": {\"name\": \"parent_document\", \"label\": \"Parent Entity\", \"type\": \"VARCHAR\", \"hidden\": 1}}, {\"node\": \"swp_3\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"hidden\": 1}}, {\"node\": \"swp_10\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"swp_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swp_4\", \"element\": \"select\", \"data\": {\"name\": \"position\", \"label\": \"Position\", \"options\": \"Staffing Position\", \"required\": 1, \"in_list_view\": 1}}]}, {\"node\": \"swp_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swp_5\", \"element\": \"input\", \"data\": {\"name\": \"pay_rate\", \"label\": \"Pay rate (/h)\", \"format\": \"currency\", \"in_list_view\": 1, \"description\": \"Leave empty to use the position default.\"}}]}, {\"node\": \"swp_9\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swp_6\", \"element\": \"date\", \"data\": {\"name\": \"qualified_on\", \"label\": \"Qualified on\", \"in_list_view\": 1}}]}]}]",
+  "__ENTITY__": "Entity"
+}

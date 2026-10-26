@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Contract Template",
+  "module": "staffing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "doc_structure": "[{\"node\": \"sct_1\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"sct_2\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Template\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1}}]}, {\"node\": \"sct_5\", \"element\": \"row\", \"data\": {\"layout\": \"[50,50]\"}, \"elements\": [{\"node\": \"sct_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sct_3\", \"element\": \"select\", \"data\": {\"name\": \"kind\", \"label\": \"Kind\", \"options\": \"Master Services Agreement\\nRate Schedule\", \"required\": 1, \"in_list_view\": 1}}]}, {\"node\": \"sct_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sct_4\", \"element\": \"switch\", \"data\": {\"name\": \"active\", \"label\": \"Active\", \"default\": 1, \"in_list_view\": 1, \"description\": \"The active template of each kind is the one sent for signature.\"}}]}]}, {\"node\": \"sct_8\", \"element\": \"input\", \"data\": {\"name\": \"document_title\", \"label\": \"Document title\", \"required\": 1, \"description\": \"Title shown to the signer, e.g. \\\"Master Services Agreement\\\".\"}}, {\"node\": \"sct_9\", \"element\": \"markdown_input\", \"data\": {\"name\": \"body\", \"label\": \"Body\", \"required\": 1, \"description\": \"Markdown. Placeholders: {{company.name}}, {{company.address}}, {{company.phone}}, {{company.email}}, {{client.company_name}}, {{client.address}}, {{client.payment_terms}}, {{agreement.name}}, {{agreement.title}}, {{agreement.site}}, {{agreement.valid_from}}, {{agreement.valid_to}}, {{agreement.overtime_multiplier}}, {{rates_table}}, {{signer.name}}, {{signer.email}}, {{today}}.\"}}]",
+  "search_fields": "name,kind",
+  "title_fields": "document_title",
+  "naming_series": "",
+  "resources": [],
+  "__ENTITY__": "Entity"
+}

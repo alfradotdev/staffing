@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Timesheet",
+  "module": "staffing-billing",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 1,
+  "require_login_to_comment": 0,
+  "search_fields": "name,worker",
+  "title_fields": "worker,week_start",
+  "naming_series": "TS-.#####",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"sts_2\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"sts_1\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1, \"hidden\": 1}}]}, {\"node\": \"sts_9\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"sts_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_3\", \"element\": \"select\", \"data\": {\"name\": \"worker\", \"label\": \"Worker\", \"options\": \"Staffing Worker\", \"required\": 1, \"in_list_view\": 1, \"searchable\": 1}}]}, {\"node\": \"sts_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_4\", \"element\": \"date\", \"data\": {\"name\": \"week_start\", \"label\": \"Week of (Monday)\", \"required\": 1, \"in_list_view\": 1}}]}, {\"node\": \"sts_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_5\", \"element\": \"select\", \"data\": {\"name\": \"status\", \"label\": \"Status\", \"options\": \"Draft\\nSubmitted\\nApproved\\nExported\", \"default\": \"Draft\", \"in_list_view\": 1}}]}]}, {\"node\": \"sts_22\", \"element\": \"card\", \"data\": {\"label\": \"Hours\"}, \"elements\": [{\"node\": \"sts_10\", \"element\": \"form_table\", \"data\": {\"name\": \"lines\", \"label\": \"Lines\", \"options\": \"Staffing Timesheet Line\", \"description\": \"Built from the worker's completed shifts of the week while the timesheet is a Draft.\"}}, {\"node\": \"sts_21\", \"element\": \"row\", \"data\": {\"layout\": \"[20,20,20,20,20]\"}, \"elements\": [{\"node\": \"sts_16\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_11\", \"element\": \"input\", \"data\": {\"name\": \"total_hours\", \"label\": \"Total hours\", \"format\": \"decimal\", \"readonly\": 1, \"in_list_view\": 1}}]}, {\"node\": \"sts_17\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_12\", \"element\": \"input\", \"data\": {\"name\": \"regular_hours\", \"label\": \"Regular\", \"format\": \"decimal\", \"readonly\": 1}}]}, {\"node\": \"sts_18\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_13\", \"element\": \"input\", \"data\": {\"name\": \"overtime_hours\", \"label\": \"Overtime\", \"format\": \"decimal\", \"readonly\": 1, \"in_list_view\": 1}}]}, {\"node\": \"sts_19\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_14\", \"element\": \"input\", \"data\": {\"name\": \"gross_pay\", \"label\": \"Gross pay (est.)\", \"format\": \"currency\", \"readonly\": 1}}]}, {\"node\": \"sts_20\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_15\", \"element\": \"input\", \"data\": {\"name\": \"billable_amount\", \"label\": \"Billable\", \"format\": \"currency\", \"readonly\": 1, \"in_list_view\": 1}}]}]}]}, {\"node\": \"sts_27\", \"element\": \"row\", \"data\": {\"layout\": \"[70,30]\"}, \"elements\": [{\"node\": \"sts_25\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_23\", \"element\": \"textarea\", \"data\": {\"name\": \"review_notes\", \"label\": \"Review notes\"}}]}, {\"node\": \"sts_26\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"sts_24\", \"element\": \"input\", \"data\": {\"name\": \"payroll_batch\", \"label\": \"Payroll batch\", \"readonly\": 1, \"description\": \"Set when exported to the payroll provider.\"}}]}]}]",
+  "__ENTITY__": "Entity"
+}

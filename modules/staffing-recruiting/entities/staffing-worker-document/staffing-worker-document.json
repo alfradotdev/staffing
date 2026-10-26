@@ -1,0 +1,20 @@
+{
+  "name": "Staffing Worker Document",
+  "module": "staffing-recruiting",
+  "default_list_view": "List",
+  "is_single": 0,
+  "is_static": 0,
+  "is_virtual": 0,
+  "include_in_installer": 0,
+  "is_child": 0,
+  "is_builder": 0,
+  "enable_history": 1,
+  "enable_comments": 0,
+  "require_login_to_comment": 0,
+  "search_fields": "name,worker,document_type",
+  "title_fields": "document_type",
+  "naming_series": "WDOC-.#####",
+  "resources": [],
+  "doc_structure": "[{\"node\": \"swd_2\", \"element\": \"row\", \"data\": {\"name\": \"name_and_status_container\"}, \"elements\": [{\"node\": \"swd_1\", \"element\": \"input\", \"data\": {\"name\": \"name\", \"label\": \"Name\", \"type\": \"VARCHAR\", \"required\": 1, \"unique\": 1, \"set_only_time\": 1, \"in_list_view\": 1, \"searchable\": 1, \"hidden\": 1}}]}, {\"node\": \"swd_9\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"swd_6\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_3\", \"element\": \"select\", \"data\": {\"name\": \"worker\", \"label\": \"Worker\", \"options\": \"Staffing Worker\", \"required\": 1, \"in_list_view\": 1, \"searchable\": 1}}]}, {\"node\": \"swd_7\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_4\", \"element\": \"select\", \"data\": {\"name\": \"document_type\", \"label\": \"Type\", \"options\": \"Driver License\\nCDL\\nDOT Medical Card\\nBackground Check\\nDrug Test\\nI-9\\nAirport Badge\\nTraining Certificate\\nOther\", \"required\": 1, \"in_list_view\": 1}}]}, {\"node\": \"swd_8\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_5\", \"element\": \"select\", \"data\": {\"name\": \"status\", \"label\": \"Status\", \"options\": \"Pending\\nValid\\nExpiring Soon\\nExpired\", \"default\": \"Pending\", \"readonly\": 1, \"in_list_view\": 1, \"description\": \"Computed from the expiry date on save.\"}}]}]}, {\"node\": \"swd_16\", \"element\": \"row\", \"data\": {\"layout\": \"[33,33,33]\"}, \"elements\": [{\"node\": \"swd_13\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_10\", \"element\": \"input\", \"data\": {\"name\": \"number_last4\", \"label\": \"Number (last 4)\", \"description\": \"Never store the full number.\"}}]}, {\"node\": \"swd_14\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_11\", \"element\": \"date\", \"data\": {\"name\": \"issued_on\", \"label\": \"Issued on\"}}]}, {\"node\": \"swd_15\", \"element\": \"col\", \"data\": {}, \"elements\": [{\"node\": \"swd_12\", \"element\": \"date\", \"data\": {\"name\": \"expires_on\", \"label\": \"Expires on\", \"in_list_view\": 1}}]}]}, {\"node\": \"swd_17\", \"element\": \"file_input\", \"data\": {\"name\": \"attachment\", \"label\": \"Attachment\"}}, {\"node\": \"swd_18\", \"element\": \"textarea\", \"data\": {\"name\": \"notes\", \"label\": \"Notes\"}}]",
+  "__ENTITY__": "Entity"
+}
