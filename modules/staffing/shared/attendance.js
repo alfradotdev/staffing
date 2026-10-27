@@ -19,11 +19,14 @@ export function requestOrigin() {
   return `${proto}://${host}`;
 }
 
-/** Website path of a page from the active website's menu (`/clock`). */
-export function pagePath(page, hint) {
+/**
+ * Kiosk path of a page from the active website's menu (`/kiosk/clock`): the
+ * page without the site's navigation, for phones and station tablets.
+ */
+export function kioskPath(page, hint) {
   const item = (loopar.webApp?.menu_items || []).find((m) => m.page === page);
   if (!item?.link) loopar.throw(`The website has no page "${page}". Add a menu row (router only) with that page, e.g. link "${hint}".`);
-  return `/${item.link}`;
+  return `/kiosk/${item.link}`;
 }
 
 /** Great-circle distance in meters. */
@@ -43,7 +46,7 @@ export function distanceMeters(a, b) {
 export async function issueClockLink(workerName) {
   const worker = await loopar.getDocument('Staffing Worker', workerName);
   const token = crypto.randomBytes(32).toString('base64url');
-  const url = `${requestOrigin()}${pagePath(CLOCK_PAGE, 'clock')}?token=${token}`;
+  const url = `${requestOrigin()}${kioskPath(CLOCK_PAGE, 'clock')}?token=${token}`;
   worker.clock_token_hash = sha256(token);
   worker.clock_link_sent_at = new Date().toISOString();
   await worker.save({ validate: false });

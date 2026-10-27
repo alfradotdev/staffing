@@ -114,6 +114,7 @@ export default class installer extends CoreInstaller {
                 ...work('Staffing Worker Document', 'Staffing Shift', 'Staffing Timesheet', 'Staffing Station', 'Staffing Unit'),
                 ...read('Staffing Process', 'Staffing Unit Event'),
                 {document: 'Staffing Station', action: 'linkDevice'},
+                {document: 'Staffing Station', action: 'useThisDevice'},
                 {document: 'Staffing Timesheet', action: 'transition'},
                 {document: 'Staffing Timesheet', action: 'generateWeek'},
                 {document: 'Staffing Worker', action: 'sendClockLink'},

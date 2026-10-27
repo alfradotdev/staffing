@@ -3,14 +3,13 @@
 import crypto from 'crypto';
 import { loopar, Op } from 'loopar';
 import { addDays, today, num, toRows, parseDateTime, childRows, round2 } from './utils.js';
-import { sha256, requestOrigin, pagePath } from './attendance.js';
+import { sha256, requestOrigin, kioskPath } from './attendance.js';
 import { shiftWindow } from '../../staffing-operations/entities/staffing-shift/staffing-shift.js';
 
 /** Page of the station kiosk; a website menu row (router only) points at it. */
 export const STATION_PAGE = 'Staffing Station Kiosk';
 
 const isOn = (v) => [1, '1', true, 'true'].includes(v);
-const nowISO = () => new Date().toISOString();
 
 /** Scanned codes: trimmed, upper case, inner spaces removed. */
 export const normalizeCode = (v) => String(v ?? '').trim().toUpperCase().replace(/\s+/g, '');
@@ -49,21 +48,95 @@ export async function decodeVin(vin) {
 
 /* ------------------------------------------------------------ devices */
 
-/** New kiosk link for a station (the previous one stops working). */
+/** Cookie that identifies a linked station device (its token; only the hash is stored). */
+export const STATION_COOKIE = 'staffing_station';
+const DEVICE_COOKIE_MS = 400 * 24 * 60 * 60 * 1000;   // browsers cap cookies at ~400 days
+export const PAIRING_MINUTES = 10;
+/** A linked kiosk reports every few minutes; silent this long, the desk shows it offline. */
+export const HEARTBEAT_MINUTES = 5;
+
+const dbNow = () => loopar.dateUtils.getDateTime(new Date(), 'DB');
+
+/**
+ * Pairing link for a station: single use, valid PAIRING_MINUTES. The device
+ * that opens it becomes the station (see pairDevice); until then the device
+ * linked before keeps working.
+ */
 export async function issueDeviceLink(stationName) {
   const station = await loopar.getDocument('Staffing Station', stationName);
-  const token = crypto.randomBytes(32).toString('base64url');
-  station.device_token_hash = sha256(token);
-  station.device_linked_at = nowISO();
+  const code = crypto.randomBytes(24).toString('base64url');
+  station.pairing_hash = sha256(code);
+  station.pairing_expires_ts = Date.now() + PAIRING_MINUTES * 60 * 1000;
   await station.save({ validate: false });
-  return { url: `${requestOrigin()}${pagePath(STATION_PAGE, 'station')}?token=${token}` };
+  return { url: `${requestOrigin()}${kioskPath(STATION_PAGE, 'station')}?pair=${code}`, minutes: PAIRING_MINUTES };
 }
 
-export async function stationByToken(token) {
+/**
+ * Turns the device that opened a pairing link into the station: the link is
+ * spent, a new device token is issued (the previous device stops working) and
+ * returned to be kept in the device's cookie. Null when the link is unknown,
+ * spent or expired.
+ */
+export async function pairDevice(code) {
+  if (!code || String(code).length < 20) return null;
+  const [row] = await loopar.db.getAll('Staffing Station', ['name', 'pairing_expires_ts'], { pairing_hash: sha256(code), active: 1 });
+  if (!row) return null;
+
+  const station = await loopar.getDocument('Staffing Station', row.name);
+  if (num(row.pairing_expires_ts) < Date.now()) {
+    station.pairing_hash = null;
+    station.pairing_expires_ts = null;
+    await station.save({ validate: false });
+    return null;
+  }
+
+  return { station, token: await bindDevice(station) };
+}
+
+/** New device token for `station` (the device linked before stops working); returns it for the cookie. */
+async function bindDevice(station) {
+  const token = crypto.randomBytes(32).toString('base64url');
+  station.device_token_hash = sha256(token);
+  station.device_linked_at = dbNow();
+  station.pairing_hash = null;
+  station.pairing_expires_ts = null;
+  markSeen(station);
+  await station.save({ validate: false });
+  return token;
+}
+
+function markSeen(target) {
+  target.last_seen_at = dbNow();
+  target.last_seen_ts = Date.now();
+}
+
+/**
+ * "Use this device as kiosk": a supervisor signed in on the station's own
+ * tablet links it directly, then is signed out so the shared device keeps
+ * no desk session. Returns the kiosk path to open.
+ */
+export async function linkThisDevice(stationName) {
+  const station = await loopar.getDocument('Staffing Station', stationName);
+  if (!isOn(station.active)) loopar.throw('Activate the station before linking a device.');
+  rememberDevice(await bindDevice(station));
+  await loopar.auth.logout();
+  return { url: kioskPath(STATION_PAGE, 'station') };
+}
+
+/** Keeps the device token in an httpOnly cookie of this device. */
+export function rememberDevice(token) {
+  loopar.cookie.set(STATION_COOKIE, token, { path: '/', maxAge: DEVICE_COOKIE_MS });
+}
+
+/** The station this device is linked to (its cookie), or null. */
+export async function stationOfDevice() {
+  const token = loopar.cookie.get(STATION_COOKIE);
   if (!token || String(token).length < 20) return null;
   const [row] = await loopar.db.getAll('Staffing Station', ['name'], { device_token_hash: sha256(token), active: 1 });
   if (!row) return null;
-  await loopar.db.setValue('Staffing Station', 'last_seen_at', loopar.dateUtils.getDateTime(new Date(), 'DB'), row.name).catch(() => {});
+  const seen = {};
+  markSeen(seen);
+  await loopar.db.qx()('Staffing Station').where({ name: row.name }).update(seen).catch(() => {});
   return await loopar.getDocument('Staffing Station', row.name);
 }
 

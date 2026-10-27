@@ -1,7 +1,7 @@
 {
   "App": {
     "name": "staffing",
-    "version": "1.10.2"
+    "version": "1.10.6"
   },
   "documents": {
     "Builder:Desk Page Builder": {
@@ -16,7 +16,7 @@
     "App:staffing": {
       "name": "staffing",
       "description": "Staffing — Fleet & operations staffing (demo)",
-      "version": "1.10.2",
+      "version": "1.10.6",
       "autor": "alfredrz2012@gmail.com",
       "icon": "Bus",
       "logo": "",

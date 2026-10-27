@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { loopar } from 'loopar';
 import { Button } from '@cn/components/ui/button';
 import { cn } from '@cn/lib/utils';
-import { Camera, CheckCircle2, IdCard, Loader2, ScanLine, UserRoundX, XCircle } from 'lucide-react';
+import { Camera, CheckCircle2, IdCard, Loader2, LogIn, ScanLine, UserRoundX, XCircle } from 'lucide-react';
 
 /** Web page: always opens at the top, never restores the scroll position. */
 export const config = { restoreScroll: false };
@@ -12,8 +12,9 @@ export const config = { restoreScroll: false };
 /** A worker stays signed in at the station while scanning; idle this long, the next scan asks for a badge again. */
 const IDLE_MS = 2 * 60 * 1000;
 
+// The page shows its own errors (unlinked screen, scan notices): no toasts.
 const call = (action, body) => new Promise((resolve, reject) => {
-  loopar.call('Staffing Station', action, { body, freeze: false, success: resolve, error: reject });
+  loopar.call('Staffing Station', action, { body, freeze: false, notifyError: false, success: resolve, error: reject });
 });
 
 const time = (iso) => (iso ? new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }) : '');
@@ -94,9 +95,11 @@ function ScanInput({ placeholder, onSubmit, busy }) {
   );
 }
 
-/** Station kiosk behind its device link (`?token=`): badge → unit → stage. */
+/**
+ * Station kiosk on a linked device: badge → unit → stage. A pairing link
+ * (`?pair=`) links the device once; afterwards its cookie identifies it.
+ */
 export default function StaffingStationKioskPage() {
-  const [token, setToken] = useState('');
   const [kiosk, setKiosk] = useState(null);
   const [error, setError] = useState('');
   const [who, setWho] = useState(null);       // { worker, full_name, badge }
@@ -106,11 +109,30 @@ export default function StaffingStationKioskPage() {
   const lastActivity = useRef(Date.now());
 
   useEffect(() => {
-    const t = new URLSearchParams(window.location.search).get('token') || '';
-    setToken(t);
-    if (!t) { setError('This station link is incomplete.'); return; }
-    call('kiosk', { token: t }).then(setKiosk).catch((e) => setError(e?.message || 'This station link is not valid.'));
+    const url = new URL(window.location.href);
+    const code = url.searchParams.get('pair');
+    // The pairing code is spent once used: drop it from the address bar (and history).
+    if (code) {
+      url.searchParams.delete('pair');
+      window.history.replaceState(window.history.state, '', url.pathname + url.search);
+    }
+    (code ? call('pair', { code }) : call('kiosk', {}))
+      .then(setKiosk)
+      .catch((e) => setError(e?.message || 'This device is not linked to a station.'));
   }, []);
+
+  // Heartbeat: the desk sees the station online; the day's figures stay fresh.
+  // A device that lost its link (or a deactivated station) shows the unlinked screen.
+  useEffect(() => {
+    if (!kiosk) return undefined;
+    const beat = () => call('kiosk', {})
+      .then((k) => setKiosk((prev) => ({ ...prev, today: k.today, station: k.station })))
+      .catch((e) => { if (e?.code === 404 || e?.status === 404) setError(e.message); });
+    const timer = setInterval(beat, (kiosk.heartbeat_minutes || 5) * 60000);
+    const onVisible = () => document.visibilityState === 'visible' && beat();
+    document.addEventListener('visibilitychange', onVisible);
+    return () => { clearInterval(timer); document.removeEventListener('visibilitychange', onVisible); };
+  }, [!!kiosk]);
 
   // Idle: sign the worker out of the station.
   useEffect(() => {
@@ -126,19 +148,27 @@ export default function StaffingStationKioskPage() {
     return promise.then(onOk).catch((e) => setNotice({ ok: false, text: e?.message || 'Try again.' })).finally(() => setBusy(false));
   };
 
-  const scanBadge = (badge) => run(call('identify', { token, badge }), (r) => setWho({ ...r.who, badge }));
-  const scanUnit = (code) => run(call('unit', { token, code }), (r) => setUnit(r.unit));
-  const record = (stage) => run(call('record', { token, badge: who.badge, code: unit.code, stage }), (r) => {
+  const scanBadge = (badge) => run(call('identify', { badge }), (r) => setWho({ ...r.who, badge }));
+  const scanUnit = (code) => run(call('unit', { code }), (r) => setUnit(r.unit));
+  const record = (stage) => run(call('record', { badge: who.badge, code: unit.code, stage }), (r) => {
     setKiosk((k) => ({ ...k, today: r.today }));
     setNotice({ ok: true, text: `${r.unit.code} → ${stage} · ${r.worker}` });
     setUnit(null);
   });
 
   if (error) {
+    // A supervisor signs in on this device, opens the station and uses "Use this device as kiosk".
+    const login = `/auth/login?redirect=${encodeURIComponent('/desk/Staffing Station/list')}`;
     return (
       <div className="mx-auto max-w-md px-4 py-24 text-center">
         <XCircle className="mx-auto size-10 text-muted-foreground" />
         <p className="mt-4 text-lg font-semibold">{error}</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          A supervisor can link it: sign in on this device, open the station and choose <b>Use this device as kiosk</b>.
+        </p>
+        <Button className="mt-6" onClick={() => { window.location.href = login; }}>
+          <LogIn className="mr-2 size-4" /> Sign in to link this device
+        </Button>
       </div>
     );
   }
