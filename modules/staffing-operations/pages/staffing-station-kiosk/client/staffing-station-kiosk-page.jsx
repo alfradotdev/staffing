@@ -19,36 +19,73 @@ const call = (action, body) => new Promise((resolve, reject) => {
 
 const time = (iso) => (iso ? new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }) : '');
 
+const FORMATS = ['code_39', 'code_128', 'qr_code', 'data_matrix', 'ean_13', 'pdf417'];
+let detectorPromise = null;
+
 /**
- * Camera scanning through the browser's BarcodeDetector (Chrome/Edge on
- * Android and desktop). Where it isn't available the button is hidden and
- * the input still takes USB/Bluetooth scanners (they type + Enter) or typing.
+ * A barcode detector: the browser's own (Chrome/Edge on Android) or, where
+ * there is none (every iPhone/iPad browser, Firefox), the ZXing WebAssembly
+ * one with the same API. Loaded on first use; the .wasm is served by this
+ * server, not a CDN.
+ */
+function loadDetector() {
+  detectorPromise ??= (async () => {
+    if ('BarcodeDetector' in window) {
+      const supported = await window.BarcodeDetector.getSupportedFormats().catch(() => FORMATS);
+      return new window.BarcodeDetector({ formats: FORMATS.filter((f) => supported.includes(f)) });
+    }
+    const [{ BarcodeDetector, prepareZXingModule }, { default: wasmUrl }] = await Promise.all([
+      import('barcode-detector/ponyfill'),
+      import('zxing-wasm/reader/zxing_reader.wasm?url'),
+    ]);
+    prepareZXingModule({ overrides: { locateFile: (path, prefix) => (path.endsWith('.wasm') ? wasmUrl : prefix + path) } });
+    return new BarcodeDetector({ formats: FORMATS });
+  })();
+  detectorPromise.catch(() => { detectorPromise = null; });
+  return detectorPromise;
+}
+
+const cameraProblem = (error) => {
+  if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) return 'The camera needs a secure connection (https://).';
+  if (error?.name === 'NotAllowedError') return 'Camera access was denied. Allow it in the browser settings and try again.';
+  if (error?.name === 'NotFoundError') return 'No camera found on this device.';
+  return 'The camera could not be started.';
+};
+
+/**
+ * Camera scanning (rear camera). Without a camera, USB/Bluetooth scanners
+ * (they type + Enter) and typing still work in the input.
  */
 function CameraScanner({ onCode, onClose }) {
   const video = useRef(null);
+  const [problem, setProblem] = useState('');
   useEffect(() => {
     let stream; let stop = false;
-    const detector = new window.BarcodeDetector({ formats: ['code_39', 'code_128', 'qr_code', 'data_matrix', 'ean_13', 'pdf417'] });
     (async () => {
       try {
+        if (!window.isSecureContext || !navigator.mediaDevices?.getUserMedia) throw new Error('insecure');
+        const detector = await loadDetector();
         stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        if (stop) return;
         video.current.srcObject = stream;
         await video.current.play();
         while (!stop) {
           const [hit] = await detector.detect(video.current).catch(() => []);
           if (hit?.rawValue) { onCode(hit.rawValue); break; }
-          await new Promise((r) => setTimeout(r, 250));
+          await new Promise((r) => setTimeout(r, 200));
         }
-      } catch {
-        onClose();
+      } catch (error) {
+        if (!stop) setProblem(cameraProblem(error));
       }
     })();
     return () => { stop = true; stream?.getTracks().forEach((t) => t.stop()); };
-  }, [onCode, onClose]);
+  }, [onCode]);
 
   return (
     <div className="space-y-2">
-      <video ref={video} playsInline muted className="aspect-video w-full rounded-xl bg-black object-cover" />
+      {problem
+        ? <p className="rounded-xl bg-muted p-4 text-sm">{problem}</p>
+        : <video ref={video} playsInline muted autoPlay className="aspect-video w-full rounded-xl bg-black object-cover" />}
       <Button variant="ghost" className="w-full" onClick={onClose}>Close camera</Button>
     </div>
   );
@@ -58,7 +95,6 @@ function ScanInput({ placeholder, onSubmit, busy }) {
   const input = useRef(null);
   const [value, setValue] = useState('');
   const [camera, setCamera] = useState(false);
-  const canCamera = typeof window !== 'undefined' && 'BarcodeDetector' in window && !!navigator.mediaDevices;
 
   useEffect(() => { if (!busy) input.current?.focus(); }, [busy, placeholder]);
 
@@ -85,11 +121,9 @@ function ScanInput({ placeholder, onSubmit, busy }) {
           disabled={busy}
           className="h-16 w-full rounded-xl border-2 border-input bg-background px-4 text-xl font-mono tracking-wider focus:border-primary focus:outline-none"
         />
-        {canCamera && (
-          <Button type="button" variant="secondary" className="h-16 w-16 shrink-0" onClick={() => setCamera((c) => !c)} aria-label="Scan with camera">
-            <Camera className="size-6" />
-          </Button>
-        )}
+        <Button type="button" variant="secondary" className="h-16 w-16 shrink-0" onClick={() => setCamera((c) => !c)} aria-label="Scan with camera">
+          <Camera className="size-6" />
+        </Button>
       </form>
     </div>
   );
