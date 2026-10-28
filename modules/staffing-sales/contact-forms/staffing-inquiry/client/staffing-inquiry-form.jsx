@@ -53,7 +53,7 @@ function ServicesPicker({ data = {} }) {
   };
 
   const titleOf = (name) => services?.find((s) => s.name === name)?.title || name;
-  const label = <p className="text-sm font-medium leading-none">{data.label || 'Services needed'}</p>;
+  const label = <p className="text-sm font-medium leading-none">{data.label || 'Service of interest'}</p>;
 
   // View: only what was selected, as static badges.
   if (readMode) {
@@ -102,7 +102,7 @@ function ServicesPicker({ data = {} }) {
           })}
         </div>
       )}
-      <p className="text-sm text-muted-foreground">Pick every role you need. Not sure? Tell us in the message.</p>
+      <p className="text-sm text-muted-foreground">Pick the services you are interested in. Not sure? Tell us in the description.</p>
     </div>
   );
 }

@@ -84,9 +84,13 @@ export default class StaffingInquiry extends ContactFormBase {
     const titles = await this.#serviceTitles();
     const details = [
       titles.length && `Services: ${titles.join(', ')}`,
+      this.industry && `Industry: ${this.industry}`,
+      this.estimated_need && `Estimated need: ${this.estimated_need}`,
+      this.timeline && `Timeline: ${this.timeline}`,
+      this.preferred_contact_method && `Preferred contact: ${this.preferred_contact_method}`,
       this.location && `Location: ${this.location}`,
-      this.headcount && `Approx. headcount: ${this.headcount}`,
-      this.start_date && `Desired start: ${this.start_date}`,
+      this.headcount && `Headcount: ${this.headcount}`,
+      this.start_date && `Expected start: ${this.start_date}`,
       '',
       this.message,
     ].filter(v => v !== undefined && v !== null && v !== false && v !== 0).join('\n');

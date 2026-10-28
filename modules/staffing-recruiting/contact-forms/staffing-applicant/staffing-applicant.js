@@ -17,8 +17,18 @@ export default class StaffingApplicant extends ContactFormBase {
     }
   }
 
+  /** The options of the areas_of_interest slot (one per line). */
+  #areaOptions() {
+    const field = loopar.utils.fieldList(this.__ENTITY__.doc_structure).find(f => f.data?.name === 'areas_of_interest');
+    return String(field?.data?.options || '').split('\n').map(s => s.trim()).filter(Boolean);
+  }
+
   async beforeSave() {
     await super.beforeSave();
+    // Comes from a public form: keep only the offered areas.
+    const options = this.#areaOptions();
+    this.areas_of_interest = String(this.areas_of_interest || '').split(',').map(s => s.trim())
+      .filter(a => options.includes(a)).join(',') || null;
     if (this.__IS_NEW__) {
       this.stage = this.stage || 'New';
       // date_time fields persist NOW when left unset.
