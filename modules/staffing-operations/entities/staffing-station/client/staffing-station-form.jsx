@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import QRCode from 'qrcode';
 import { useForm, FormLayout } from '@loopar/form';
-import { useFormValues } from '@form-provider';
+import { useFormValues } from '@form-context';
 import { loopar } from 'loopar';
 import { Button } from '@cn/components/ui/button';
 import { Copy, MonitorSmartphone, TabletSmartphone } from 'lucide-react';
