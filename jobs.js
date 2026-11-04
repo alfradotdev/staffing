@@ -7,6 +7,7 @@
 
 import { loopar, Op } from 'loopar';
 import { addDays, today, mondayOf, num, setting, notifyTable } from './modules/staffing/shared/utils.js';
+import { clientNames } from './modules/staffing/shared/clients.js';
 import StaffingTimesheet from './modules/staffing-billing/entities/staffing-timesheet/staffing-timesheet.js';
 
 /** Recomputes document statuses (Valid → Expiring Soon → Expired) and emails the list to recruiting. */
@@ -66,11 +67,8 @@ async function overdueInvoices() {
   const invoices = await loopar.db.getAll('Staffing Invoice', ['name', 'client', 'due_date', 'balance'],
     { status: 'Sent', due_date: { [Op.lt]: today() } });
   if (!invoices.length) return 'no overdue invoices';
-  const rows = [];
-  for (const i of invoices) {
-    const client = await loopar.db.getValue('Staffing Client', 'company_name', i.client, { ifNotFound: null });
-    rows.push({ invoice: i.name, client: client || i.client, due: i.due_date, balance: `$${num(i.balance).toFixed(2)}` });
-  }
+  const clients = await clientNames(invoices.map((i) => i.client));
+  const rows = invoices.map((i) => ({ invoice: i.name, client: clients.get(i.client) || i.client, due: i.due_date, balance: `$${num(i.balance).toFixed(2)}` }));
   const mail = await notifyTable('sales_notify_email', `${rows.length} overdue invoice(s)`, 'These invoices are past due:',
     [{ key: 'invoice', label: 'Invoice' }, { key: 'client', label: 'Client' }, { key: 'due', label: 'Due' }, { key: 'balance', label: 'Balance' }],
     rows);

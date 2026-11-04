@@ -2,6 +2,7 @@
 
 import { BaseDocument, loopar, Op } from 'loopar';
 import { toRows, num, round2, today, addDays, parseDate, setting } from '../../../staffing/shared/utils.js';
+import { clientBillingContact, clientCustomer } from '../../../staffing/shared/clients.js';
 
 const TERMS_DAYS = { 'Net 15': 15, 'Net 30': 30, 'Net 45': 45, 'Net 60': 60 };
 
@@ -41,13 +42,11 @@ export default class StaffingInvoice extends BaseDocument {
     this.balance = round2(this.total - num(this.amount_paid));
   }
 
+  /** The client's primary contact email (Customer contacts), else the Customer email. */
   async #billToEmail() {
-    const id = await loopar.db.getValue('Staffing Client', 'id', this.client, { ifNotFound: null });
-    const contacts = id ? await loopar.db.getAll('Staffing Client Contact', ['email', 'is_primary'],
-      { parent_document: 'Staffing Client', parent_id: id }) : [];
-    return contacts.find(c => num(c.is_primary) && c.email)?.email
-      || contacts.find(c => c.email)?.email
-      || await loopar.db.getValue('Staffing Client', 'email', this.client, { ifNotFound: null });
+    return (await clientBillingContact(this.client))?.email
+      || (await clientCustomer(this.client, ['email']))?.email
+      || null;
   }
 
   async beforeTransition(transition) {

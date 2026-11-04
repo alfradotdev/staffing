@@ -1,7 +1,7 @@
 {
   "App": {
     "name": "staffing",
-    "version": "1.11.1"
+    "version": "1.12.0"
   },
   "documents": {
     "Builder:Desk Page Builder": {
@@ -16,7 +16,7 @@
     "App:staffing": {
       "name": "staffing",
       "description": "Staffing — Fleet & operations staffing (demo)",
-      "version": "1.11.1",
+      "version": "1.12.0",
       "autor": "alfredrz2012@gmail.com",
       "icon": "Bus",
       "logo": "",
@@ -174,9 +174,6 @@
     },
     "Entity:Staffing Client": {
       "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client"
-    },
-    "Entity:Staffing Client Contact": {
-      "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-client-contact"
     },
     "Entity:Staffing Opportunity": {
       "__root__": "/apps/staffing/modules/staffing-sales/entities/staffing-opportunity"
@@ -1133,7 +1130,6 @@
     "Entity:Staffing Worker Document": "link",
     "Entity:Staffing Worker Position": "link",
     "Entity:Staffing Client": "link",
-    "Entity:Staffing Client Contact": "link",
     "Entity:Staffing Opportunity": "link",
     "Entity:Staffing Opportunity Line": "link",
     "Entity:Staffing Rate Agreement": "link",

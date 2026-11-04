@@ -2,6 +2,7 @@
 
 import { loopar } from 'loopar';
 import { toRows, num, setting, today } from './utils.js';
+import { clientCustomer } from './clients.js';
 
 const escapeHTML = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const money = (v) => `$${num(v).toFixed(2)}`;
@@ -25,8 +26,9 @@ function ratesTable(agreement, lines) {
 export async function contractContext(agreement, signer) {
   const client = await loopar.getDocument('Staffing Client', agreement.client);
   const site = agreement.site ? await loopar.getDocument('Staffing Site', agreement.site, null, { ifNotFound: null }) : null;
+  const customer = await clientCustomer(client.name) || {};
   const lines = toRows(await agreement.lines);
-  const address = [client.billing_address, client.billing_city, [client.billing_state, client.billing_zip_code].filter(Boolean).join(' ')]
+  const address = [customer.address, customer.city, [customer.state, customer.zip_code].filter(Boolean).join(' '), customer.country]
     .filter(Boolean).join(', ');
 
   const companyName = await setting('company_name', null);
@@ -43,7 +45,7 @@ export async function contractContext(agreement, signer) {
       email: await setting('email', ''),
     },
     client: {
-      company_name: client.company_name || client.name,
+      company_name: customer.customer_name || client.name,
       address,
       payment_terms: client.payment_terms || await setting('default_payment_terms', 'Net 30'),
     },

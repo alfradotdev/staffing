@@ -2,6 +2,7 @@
 
 import { BaseDocument, loopar, Op } from 'loopar';
 import { toRows, num, round2, today } from '../../../staffing/shared/utils.js';
+import { clientName } from '../../../staffing/shared/clients.js';
 
 export default class StaffingOpportunity extends BaseDocument {
   constructor(props) {
@@ -75,9 +76,8 @@ export default class StaffingOpportunity extends BaseDocument {
     }
     if (!byPosition.size) return;
 
-    const company = await loopar.db.getValue('Staffing Client', 'company_name', this.client, { ifNotFound: null });
     const agreement = await loopar.newDocument('Staffing Rate Agreement', {
-      title: `${company || this.client} rates`,
+      title: `${await clientName(this.client)} rates`,
       client: this.client,
       site: this.site || null,
       valid_from: this.expected_start || today(),

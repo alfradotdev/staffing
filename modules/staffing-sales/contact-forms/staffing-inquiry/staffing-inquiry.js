@@ -1,6 +1,7 @@
 'use strict';
 
 import { ContactFormBase, loopar, Op } from 'loopar';
+import { createClient, findClientByCompany } from '../../../staffing/shared/clients.js';
 
 /** `services` is stored as comma-separated Service names. */
 const splitNames = (v) => String(v || '').split(',').map(s => s.trim()).filter(Boolean);
@@ -49,28 +50,32 @@ export default class StaffingInquiry extends ContactFormBase {
     return rows.map(r => r.title);
   }
 
-  /** Client with this company name, or a new Prospect with the sender as primary contact. */
+  /**
+   * Client whose Customer has this company name, or a new Prospect: its
+   * Customer (type Company) gets the sender as primary contact.
+   */
   async #findOrCreateClient() {
     const company = String(this.company_name || '').trim();
-    const [existing] = await loopar.db.getAll('Staffing Client', ['name'], { company_name: company });
-    if (existing) return existing.name;
+    const existing = await findClientByCompany(company);
+    if (existing) return existing;
 
-    const client = await loopar.newDocument('Staffing Client', {
-      company_name: company,
-      status: 'Prospect',
-      email: this.email,
-      phone: this.phone,
-      notes: `Created from website inquiry ${this.name}.`,
-      contacts: [{
+    return await createClient({
+      customer: {
+        customer_name: company,
+        email: this.email,
+        phone: this.phone,
+      },
+      contact: {
         full_name: this.contact_name,
         job_title: this.job_title,
         email: this.email,
         phone: this.phone,
-        is_primary: 1,
-      }],
+      },
+      client: {
+        status: 'Prospect',
+        notes: `Created from website inquiry ${this.name}.`,
+      },
     });
-    await client.save();
-    return client.name;
   }
 
   /**

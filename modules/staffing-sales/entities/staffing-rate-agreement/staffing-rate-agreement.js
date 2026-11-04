@@ -3,6 +3,7 @@
 import { BaseDocument, loopar, applyTransition } from 'loopar';
 import { toRows, num, round2, parseDate, setting } from '../../../staffing/shared/utils.js';
 import { renderContract } from '../../../staffing/shared/contracts.js';
+import { clientBillingContact, clientName } from '../../../staffing/shared/clients.js';
 
 const isOn = (v) => [1, '1', true, 'true'].includes(v);
 
@@ -27,10 +28,9 @@ export default class StaffingRateAgreement extends BaseDocument {
     if (this.client && !this.signer_email) await this.#defaultSigner();
   }
 
+  /** The client's primary contact (Customer contacts), else its first contact with email. */
   async #defaultSigner() {
-    const client = await loopar.getDocument('Staffing Client', this.client, null, { ifNotFound: null });
-    const contacts = toRows(await client?.contacts);
-    const primary = contacts.find((c) => isOn(c.is_primary) && c.email) || contacts.find((c) => c.email);
+    const primary = await clientBillingContact(this.client);
     if (primary) {
       this.signer_name ||= primary.full_name;
       this.signer_email = primary.email;
@@ -40,7 +40,7 @@ export default class StaffingRateAgreement extends BaseDocument {
   /** Workflow method of "Send for signature": the contract goes to the signer by email. */
   async sendForSignature() {
     if (!this.signer_email) await this.#defaultSigner();
-    if (!this.signer_name || !this.signer_email) loopar.throw('Set the signer name and email (or a primary contact with email on the client).');
+    if (!this.signer_name || !this.signer_email) loopar.throw('Set the signer name and email (or add a contact with email to the Customer of the client).');
 
     const client = await loopar.getDocument('Staffing Client', this.client);
     const includeMsa = !client.msa_signed_at;
@@ -51,7 +51,7 @@ export default class StaffingRateAgreement extends BaseDocument {
     const SignatureRequest = (await loopar.newDocument('Signature Request')).constructor;
     const { request, emailed } = await SignatureRequest.issue({
       document: 'Staffing Rate Agreement', documentName: this.name,
-      title: `${title} — ${client.company_name || client.name}`,
+      title: `${title} — ${await clientName(client.name)}`,
       html, signerName: signer.name, signerEmail: signer.email,
       sender: await setting('company_name', null),
     });
