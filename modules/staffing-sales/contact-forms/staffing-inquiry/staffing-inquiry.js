@@ -2,6 +2,7 @@
 
 import { ContactFormBase, loopar, Op } from 'loopar';
 import { createClient, findClientByCompany } from '../../../staffing/shared/clients.js';
+import { setting } from '../../../staffing/shared/utils.js';
 
 /** `services` is stored as comma-separated Service names. */
 const splitNames = (v) => String(v || '').split(',').map(s => s.trim()).filter(Boolean);
@@ -12,6 +13,13 @@ export default class StaffingInquiry extends ContactFormBase {
 
   constructor(props) {
     super(props);
+  }
+
+
+  /** New submissions go to the sales inbox of Staffing Settings when it is set. */
+  async notificationRecipients() {
+    const to = String(await setting('sales_notify_email', '') || '').split(',').map(s => s.trim()).filter(Boolean);
+    return to.length ? to : await super.notificationRecipients();
   }
 
   async beforeSave() {

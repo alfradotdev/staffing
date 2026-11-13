@@ -1,6 +1,7 @@
 'use strict';
 
 import { ContactFormBase, loopar } from 'loopar';
+import { setting } from '../../../staffing/shared/utils.js';
 
 export default class StaffingApplicant extends ContactFormBase {
   /** Model methods the workflow may run (see Workflow: Staffing Applicant). */
@@ -8,6 +9,13 @@ export default class StaffingApplicant extends ContactFormBase {
 
   constructor(props) {
     super(props);
+  }
+
+
+  /** New submissions go to the recruiting inbox of Staffing Settings when it is set. */
+  async notificationRecipients() {
+    const to = String(await setting('recruiting_notify_email', '') || '').split(',').map(s => s.trim()).filter(Boolean);
+    return to.length ? to : await super.notificationRecipients();
   }
 
   /** Business rules on top of the workflow definition. */
