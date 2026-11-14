@@ -98,6 +98,7 @@ export default class StaffingInquiry extends ContactFormBase {
     const details = [
       titles.length && `Services: ${titles.join(', ')}`,
       this.industry && `Industry: ${this.industry}`,
+      this.service_model && `Service model: ${this.service_model}`,
       this.estimated_need && `Estimated need: ${this.estimated_need}`,
       this.timeline && `Timeline: ${this.timeline}`,
       this.preferred_contact_method && `Preferred contact: ${this.preferred_contact_method}`,
